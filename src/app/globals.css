@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
+@theme {
+  /* Register your Next.js fonts with Tailwind v4 */
+  --font-poppins: var(--font-poppins);
+  --font-miniver: var(--font-miniver);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary-color: #de98b4;
+  --secondary-color: #4d0a2f;
+  --white-color: #ffffff;
+  --dark-color: #252525;
+  --grey-color: #cccccc;
+  --light-pink-color: #faf4f5;
+  --site-max-width: 1300px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--white-color);
+  color: var(--dark-color);
+  overflow-x: hidden;
+}
+
+/* Custom Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 2.5s ease-in-out infinite;
+}
+
+/* Swiper Overrides for your pink theme */
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-color) !important;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: var(--primary-color) !important;
 }
