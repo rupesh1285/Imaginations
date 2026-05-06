@@ -15,14 +15,13 @@ const miniver = Miniver({
   variable: '--font-miniver'
 })
 
-export const metadata: Metadata = {
-  title: 'Imaginations | Order Blessings',
-  description: 'Bless your loved ones with Imaginations',
+export const metadata = {
+  title: "BlushieBewwry | Delivering Blessings",
+  description: 'Bless your loved ones with Love ',
   icons: {
     icon: '/images/Logo-imagination.jpg', // This links your logo to the browser tab
   },
 }
-
 export default function RootLayout({
   children,
 }: {

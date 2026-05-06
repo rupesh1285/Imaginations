@@ -1,42 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  /* Register your Next.js fonts with Tailwind v4 */
   --font-poppins: var(--font-poppins);
   --font-miniver: var(--font-miniver);
 }
 
-:root {
-  --primary-color: #de98b4;
-  --secondary-color: #4d0a2f;
-  --white-color: #ffffff;
-  --dark-color: #252525;
-  --grey-color: #cccccc;
-  --light-pink-color: #faf4f5;
-  --site-max-width: 1300px;
-}
-
 body {
-  background-color: var(--white-color);
-  color: var(--dark-color);
   overflow-x: hidden;
+  background-color: #F5EDED; /* Soft Marble Base */
 }
 
-/* Custom Floating Animation */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+/* Force links to inherit so they don't turn default blue */
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.animate-float {
-  animation: float 2.5s ease-in-out infinite;
-}
-
-/* Swiper Overrides for your pink theme */
+/* Luxury Swiper Overrides - Glowing Gold */
 .swiper-pagination-bullet-active {
-  background-color: var(--primary-color) !important;
+  background-color: #D4AF37 !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
 }
 .swiper-button-next, .swiper-button-prev {
-  color: var(--primary-color) !important;
+  color: #D4AF37 !important;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
