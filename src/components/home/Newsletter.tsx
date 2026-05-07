@@ -8,7 +8,7 @@ export default function Newsletter() {
   return (
     <section 
       className="relative w-full min-h-[80vh] flex items-center overflow-hidden py-24 md:py-32"
-      style={{ background: 'radial-gradient(circle at 80% 20%, #562B3C 0%, #2E131E 55%, #12050A 100%)' }}
+      style={{ background: 'radial-gradient(circle at 80% 20%, #7E485A 0%, #6B3A4A 55%, #3A1B27 100%)' }}
     >
       
       {/* SVG Clip Path Definition for the Curved Flap */}
