@@ -97,7 +97,7 @@ export default function Testimonials() {
               </p>
               
               <div className="mt-6 border-t border-[var(--color-plum)]/10 pt-4 flex justify-between items-center">
-                <span className="font-poppins font-bold text-[var(--color-plum)]">{review.author}</span>
+                <span className="font-nunito font-bold text-[var(--color-plum)]">{review.author}</span>
                 <span className="text-[var(--color-gold)] text-lg">⭐⭐⭐⭐⭐</span>
               </div>
             </motion.div>

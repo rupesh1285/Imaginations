@@ -13,7 +13,7 @@ import Newsletter from "@/components/home/Newsletter";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen font-poppins overflow-hidden">
+    <main className="relative min-h-screen font-nunito overflow-hidden">
       
       {/* 1. Global Soft Pink Background Base (Pinterest Aesthetic) */}
       <div className="fixed inset-0 bg-[#Fdf1f4] bg-diy-grid -z-20" />

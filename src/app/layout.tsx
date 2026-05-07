@@ -1,12 +1,18 @@
 import { ClerkProvider } from '@clerk/nextjs'
 import type { Metadata } from 'next'
-import { Poppins, Miniver } from 'next/font/google'
+import { Great_Vibes, Nunito, Miniver } from 'next/font/google'
 import './globals.css'
 
-const poppins = Poppins({ 
+const greatVibes = Great_Vibes({ 
   subsets: ['latin'], 
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-poppins'
+  weight: ['400'],
+  variable: '--font-great-vibes'
+})
+
+const nunito = Nunito({ 
+  subsets: ['latin'], 
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-nunito'
 })
 
 const miniver = Miniver({ 
@@ -45,7 +51,7 @@ export default function RootLayout({
           {/* FontAwesome for your existing icons */}
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
         </head>
-        <body className={`${poppins.variable} ${miniver.variable} font-poppins`}>
+        <body className={`${greatVibes.variable} ${nunito.variable} ${miniver.variable} font-nunito`}>
 
           {children}
         </body>

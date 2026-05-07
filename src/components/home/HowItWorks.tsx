@@ -23,7 +23,7 @@ export default function HowItWorks() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-[#4A232E]"
+            className="text-4xl md:text-5xl font-bold text-[#4A232E] font-great-vibes"
           >
             How The Magic Happens
           </motion.h2>
@@ -46,7 +46,7 @@ export default function HowItWorks() {
               <div className="w-16 h-16 rounded-full bg-[#D4AF37] text-white flex items-center justify-center font-bold text-2xl mb-6 font-miniver rotate-12 group-hover:rotate-0 transition-transform shadow-lg border-2 border-white">
                 {step.num}
               </div>
-              <h3 className="text-2xl font-bold text-[#4A232E] mb-3 font-poppins">{step.title}</h3>
+              <h3 className="text-2xl font-bold text-[#4A232E] mb-3 font-nunito">{step.title}</h3>
               <p className="text-[#5C3A46]/80 font-medium leading-relaxed">{step.desc}</p>
             </motion.div>
           ))}

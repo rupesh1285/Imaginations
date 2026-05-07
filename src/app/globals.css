@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --font-poppins: var(--font-poppins);
   --font-miniver: var(--font-miniver);
 
   /* New Theme Colors */
@@ -13,10 +12,20 @@
   --color-silver: #E0E0E0;
 }
 
+/* Custom font utility classes */
+.font-great-vibes {
+  font-family: var(--font-great-vibes), cursive !important;
+}
+
+.font-nunito {
+  font-family: var(--font-nunito), sans-serif !important;
+}
+
 body {
   overflow-x: hidden;
   background-color: var(--color-beige);
   color: var(--color-plum);
+  font-family: var(--font-nunito), sans-serif;
 }
 
 /* Force links to inherit so they don't turn default blue */

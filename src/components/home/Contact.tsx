@@ -10,7 +10,7 @@ export default function Contact() {
         <div className="flex flex-col lg:flex-row gap-12 bg-white/40 backdrop-blur-2xl border border-[#D4AF37]/40 shadow-2xl shadow-[#3A222C]/10 p-8 md:p-14 rounded-[50px]">
           
           <div className="flex-1 space-y-8">
-            <h2 className="text-5xl font-bold text-[#3A222C] mb-8">Say Hello 👋</h2>
+            <h2 className="text-5xl font-bold text-[#3A222C] mb-8 font-great-vibes">Say Hello 👋</h2>
             <div className="space-y-6 text-[#4A2B35] font-medium text-lg">
               <div className="flex items-center gap-4 bg-white/50 border border-[#D4AF37]/20 p-4 rounded-2xl"><MapPin className="text-[#D4AF37] w-6 h-6" /> <p>42B Avalanche Enclave, Dwarka Sec-10</p></div>
               <div className="flex items-center gap-4 bg-white/50 border border-[#D4AF37]/20 p-4 rounded-2xl"><Mail className="text-[#D4AF37] w-6 h-6" /> <p>info@imaginations.com</p></div>

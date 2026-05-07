@@ -2,13 +2,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function Newsletter() {
   return (
     <section 
       className="relative w-full min-h-[80vh] flex items-center overflow-hidden py-24 md:py-32"
-      style={{ background: 'radial-gradient(circle at 80% 20%, #7E485A 0%, #6B3A4A 55%, #3A1B27 100%)' }}
     >
       
       {/* SVG Clip Path Definition for the Curved Flap */}
@@ -20,10 +18,16 @@ export default function Newsletter() {
         </defs>
       </svg>
 
-      {/* 1. Premium Shiny Plum Background (Replaces the blurry noise texture) */}
-      <div className="absolute inset-0 z-0 pointer-events-none" />
+      {/* Background Image (right side, replaces plum gradient) */}
+      <div className="absolute top-0 right-0 w-full lg:w-[55%] h-full z-0">
+        <img 
+          src="/images/envelope.png" 
+          alt="" 
+          className="w-full h-full object-cover object-center" 
+        />
+      </div>
 
-      {/* 2. The Soft Curved Pink Flap (Left Side) */}
+      {/* The Soft Curved Pink Flap (Left Side) */}
       <div className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none">
         <div 
           className="absolute top-0 left-0 w-[120%] md:w-[75%] lg:w-[60%] h-full bg-[#Fdf1f4]"
@@ -69,7 +73,7 @@ export default function Newsletter() {
            </div>
 
            <span className="font-miniver text-4xl md:text-5xl text-[#B76E79] mb-[-10px] ml-2 drop-shadow-sm">Accept the</span>
-           <h2 className="text-5xl md:text-7xl font-medium text-[#5C3A46] leading-none mb-6 font-serif tracking-[0.1em] drop-shadow-sm italic">
+           <h2 className="text-5xl md:text-7xl font-medium text-[#5C3A46] leading-none mb-6 font-great-vibes tracking-[0.1em] drop-shadow-sm">
              INVITATION
            </h2>
            <p className="text-[#5C3A46] text-lg md:text-xl mb-10 font-medium max-w-md leading-relaxed">
@@ -89,47 +93,8 @@ export default function Newsletter() {
            </form>
         </motion.div>
 
-        {/* Right Side: Velvet Red Envelope */}
-        <div className="flex justify-center items-center relative w-full h-[400px] md:h-[600px] perspective-1000 z-20">
-           
-           {/* Soft Studio Wall Glow */}
-           <div 
-             className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none z-0"
-             style={{ background: 'radial-gradient(circle, rgba(122,74,90,0.8) 0%, rgba(107,58,74,0.3) 50%, transparent 100%)' }}
-           />
-
-           {/* Floating Idle Animation Wrapper */}
-           <motion.div
-             animate={{ y: [0, -15, 0] }}
-             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-             className="relative z-20"
-           >
-              {/* Envelope Wrapper */}
-              <motion.div 
-                 initial={{ opacity: 0, scale: 0.9, rotateZ: -5 }}
-                 whileInView={{ opacity: 1, scale: 1, rotateZ: 2 }}
-                 viewport={{ once: true }}
-                 transition={{ duration: 1, type: "spring", stiffness: 80 }}
-                 className="relative w-[450px] h-[325px] md:w-[625px] md:h-[450px] md:mr-8 hover:rotateZ-0 hover:scale-[1.04] hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group"
-              >
-                 
-                 {/* Envelope Image Replacement */}
-                 <div className="absolute inset-0 z-10 transition-all duration-700 group-hover:drop-shadow-[0_50px_80px_rgba(0,0,0,0.6)]">
-                    <Image src="/images/envelope.png" alt="Premium Velvet Envelope" fill priority unoptimized quality={100} className="object-contain pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] will-change-transform" />
-                 </div>
-
-                 {/* Orchid Image */}
-                 <motion.div 
-                    className="absolute -bottom-6 -left-16 w-52 h-52 md:w-72 md:h-72 md:-bottom-8 md:-left-20 z-30 drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] group-hover:drop-shadow-[0_30px_50px_rgba(0,0,0,0.5)] transition-all duration-700"
-                    whileHover={{ scale: 1.08, rotate: -5 }}
-                    transition={{ duration: 0.5 }}
-                 >
-                    <Image src="/images/orchid.png" alt="Pink Orchid" fill unoptimized quality={100} className="object-contain pointer-events-none" />
-                 </motion.div>
-
-              </motion.div>
-           </motion.div>
-        </div>
+        {/* Right Side: Image shows through naturally */}
+        <div className="hidden lg:block" />
 
       </div>
     </section>

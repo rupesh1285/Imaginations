@@ -24,7 +24,7 @@ export default function Products() {
           initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-[#3A222C]">Our Collection</h2>
+          <h2 className="text-5xl font-bold text-[#3A222C] font-great-vibes">Our Collection</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-[#D4AF37] to-[#FFDF73] mx-auto mt-6 rounded-full shadow-[0_0_10px_rgba(212,175,55,0.4)]"></div>
         </motion.div>
         

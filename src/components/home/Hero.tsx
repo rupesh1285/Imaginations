@@ -122,7 +122,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-5xl md:text-7xl font-bold leading-tight text-[#3A222C]"
+            className="text-5xl md:text-7xl font-bold leading-tight text-[#3A222C] font-great-vibes"
           >
             Gifts that feel <br className="hidden lg:block"/> like a{" "}
             <span className="font-miniver text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-rose-gold)] to-[var(--color-gold)] font-normal block mt-2">

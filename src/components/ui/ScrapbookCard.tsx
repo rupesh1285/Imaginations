@@ -22,7 +22,7 @@ export default function ScrapbookCard({ imageSrc, title, note, tiltAngle = 0, st
       
       {/* Sticker Badge */}
       {sticker && (
-        <div className="absolute -top-4 -right-4 bg-[#D4AF37] text-white font-poppins font-bold text-xs px-3 py-1 rounded-full shadow-md rotate-12 z-30 border border-white">
+        <div className="absolute -top-4 -right-4 bg-[#D4AF37] text-white font-nunito font-bold text-xs px-3 py-1 rounded-full shadow-md rotate-12 z-30 border border-white">
           {sticker}
         </div>
       )}
@@ -41,7 +41,7 @@ export default function ScrapbookCard({ imageSrc, title, note, tiltAngle = 0, st
       {/* Text Content Area */}
       <div className="mt-4 flex flex-col flex-grow items-center justify-center gap-1.5">
         {/* Title */}
-        <h3 className="font-poppins font-bold text-[var(--color-plum)] text-lg leading-tight text-center">{title}</h3>
+        <h3 className="font-nunito font-bold text-[var(--color-plum)] text-lg leading-tight text-center">{title}</h3>
         
         {/* Handwritten Note underneath */}
         {note && (

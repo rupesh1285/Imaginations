@@ -57,7 +57,7 @@ export default function CustomGifting() {
             Exclusive
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold leading-tight font-great-vibes">
             Craft a <br className="hidden lg:block"/>
             <span className="font-miniver text-5xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F9C5D1] font-normal block mt-2">
               Memory.

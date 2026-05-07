@@ -125,7 +125,7 @@ export default function TopPicks() {
             </div>
 
             {/* Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-plum)] text-center leading-tight font-serif italic">
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-plum)] text-center leading-tight font-great-vibes">
               Looking for a Home
             </h2>
 

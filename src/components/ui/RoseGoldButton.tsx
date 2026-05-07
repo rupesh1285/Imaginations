@@ -7,7 +7,7 @@ interface RoseGoldButtonProps extends HTMLMotionProps<"button"> {
 }
 
 export default function RoseGoldButton({ children, variant = "primary", className = "", ...props }: RoseGoldButtonProps) {
-  const baseStyles = "relative overflow-hidden rounded-full font-poppins font-bold text-sm md:text-base px-8 py-4 transition-all duration-300 flex items-center justify-center gap-2 group";
+  const baseStyles = "relative overflow-hidden rounded-full font-nunito font-bold text-sm md:text-base px-8 py-4 transition-all duration-300 flex items-center justify-center gap-2 group";
   
   const primaryStyles = "bg-gradient-to-r from-[var(--color-rose-gold)] to-[var(--color-soft-pink)] text-white shadow-[0_0_15px_rgba(183,110,121,0.3)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] border border-white/20";
   
