@@ -71,7 +71,12 @@ const topPicks = [
 
 export default function TopPicks() {
   return (
-    <section className="relative w-full bg-[#FADCD9] pb-24 pt-12 overflow-hidden">
+    <section className="relative w-full pb-24 pt-12 overflow-hidden">
+      {/* Blurred Plushies Background */}
+      <div className="absolute inset-0 z-0">
+        <img src="/images/Plushies.jpeg" alt="" className="w-full h-full object-cover scale-105" />
+      </div>
+
       {/* Torn Edge Transition */}
       <div className="absolute top-0 left-0 w-full -translate-y-[99%] z-10">
         <TornPaperDivider color="#FADCD9" bgColor="transparent" flipY />
@@ -98,25 +103,35 @@ export default function TopPicks() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full pointer-events-none z-0" style={{ background: 'radial-gradient(circle, rgba(253,241,244,0.3) 0%, transparent 70%)' }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center mb-16">
-          <motion.div 
+        <div className="flex flex-col items-center mb-16 relative w-fit mx-auto">
+          {/* Decorated Scrapbook Label */}
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-white/40 border border-[#D4AF37]/50 px-5 py-2 rounded-full shadow-sm mb-4"
+            className="relative bg-[#FDFAFA]/90 backdrop-blur-md px-12 py-8 rounded-lg shadow-xl border-2 border-[#D4AF37]/40"
           >
-            <span className="text-sm font-bold text-[var(--color-plum)] tracking-wider">Adopt a Blushie</span>
+            {/* Gold corner ornaments */}
+            <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-[#D4AF37] rounded-tl-sm" />
+            <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-[#D4AF37] rounded-tr-sm" />
+            <div className="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-[#D4AF37] rounded-bl-sm" />
+            <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-[#D4AF37] rounded-br-sm" />
+
+            {/* Badge */}
+            <div className="flex justify-center mb-4">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#D4AF37]/20 via-[#D4AF37]/30 to-[#D4AF37]/20 border border-[#D4AF37] px-6 py-2 rounded-full shadow-sm">
+                <span className="text-xs font-bold text-[#D4AF37] tracking-[0.2em] uppercase">🧸 Adopt a Blushie</span>
+              </div>
+            </div>
+
+            {/* Heading */}
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-plum)] text-center leading-tight font-serif italic">
+              Looking for a Home
+            </h2>
+
+            {/* Subtle gold line underneath */}
+            <div className="mt-4 mx-auto w-24 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent rounded-full" />
           </motion.div>
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-[var(--color-plum)] text-center"
-          >
-            Looking for a Home
-          </motion.h2>
         </div>
 
         {/* Polaroid Horizontal/Wrap Gallery */}
