@@ -15,11 +15,18 @@ export default function Hero() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <section className="relative w-full min-h-[100svh] flex items-center justify-center overflow-hidden bg-transparent">
-      {/* Background Glowing Orbs to reduce dullness */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-[var(--color-soft-pink)]/40 blur-[100px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[var(--color-gold)]/20 blur-[120px]" />
+    <section className="relative w-full min-h-[100svh] flex items-center justify-center overflow-hidden bg-[#8B5A2B]">
+      
+      {/* 1. Envelope Cardboard Texture & Inner Shadow */}
+      <div className="absolute inset-0 z-0 opacity-30 pointer-events-none mix-blend-multiply" style={{ backgroundImage: "url('data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} />
+      <div className="absolute inset-0 z-0 shadow-[inset_0_0_150px_rgba(40,15,0,0.9)] pointer-events-none" />
+
+      {/* 2. The Pink Flap Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none drop-shadow-[15px_0_30px_rgba(40,15,0,0.8)]">
+        <div className="absolute top-0 left-0 w-[150%] md:w-[120%] lg:w-[65%] h-full bg-[#E8A5B0]" style={{ clipPath: 'polygon(0 0, 100% 0, 75% 100%, 0% 100%)' }}>
+           {/* Flap Texture */}
+           <div className="absolute inset-0 opacity-10 mix-blend-multiply bg-diy-grid" />
+        </div>
       </div>
 
       {/* Background Floating Particles (CSS or Framer) */}
