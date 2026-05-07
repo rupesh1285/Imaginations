@@ -94,8 +94,8 @@ export default function Newsletter() {
            
            {/* Soft Studio Wall Glow */}
            <div 
-             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] md:w-[700px] md:h-[700px] rounded-full pointer-events-none z-0"
-             style={{ background: 'radial-gradient(circle, rgba(138,80,96,0.5) 0%, rgba(122,74,90,0.2) 40%, transparent 70%)' }}
+             className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none z-0"
+             style={{ background: 'radial-gradient(circle, rgba(122,74,90,0.8) 0%, rgba(107,58,74,0.3) 50%, transparent 100%)' }}
            />
 
            {/* Floating Idle Animation Wrapper */}

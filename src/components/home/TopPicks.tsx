@@ -9,62 +9,63 @@ const topPicks = [
   {
     id: 1,
     title: "Rosy Bunny",
-    image: "/images/hero.png",
-    note: "I'm super soft! 🥺",
+    image: "/images/Rosy_bunny.jpeg",
+    note: "The coolest cuddle buddy around 🐰",
     tiltAngle: -3,
     sticker: "Best Seller"
   },
   {
     id: 2,
     title: "Golden Bear",
-    image: "/images/Hampers.png",
+    image: "/images/Golden_bear.jpeg",
     note: "Take me home! 💖",
     tiltAngle: 4
   },
   {
     id: 3,
-    title: "Plum Kitty",
-    image: "/images/premium-bg.jpg",
-    note: "Perfect cuddles! ✨",
+    title: "Sir Sass-a-Lot",
+    image: "/images/Plum_kitty.jpeg",
+    note: "I guess you can hug me. Whatever. 🙄",
     tiltAngle: -2,
-    sticker: "New"
+    sticker: "Sassy"
   },
   {
     id: 4,
-    title: "Beige Puppy",
-    image: "/images/hero.png",
-    note: "Your new bestie 🐾",
+    title: "Waffle the Pup",
+    image: "/images/Beige_puppy.jpeg",
+    note: "Will trade tail wags for treats! 🦴",
     tiltAngle: 3
   },
   {
     id: 5,
-    title: "Blushie Kitten",
-    image: "/images/hero.png",
-    note: "Purr-fect gift 🐱",
-    tiltAngle: -5
+    title: "Hello Kitty",
+    image: "/images/Blushie_kitten.jpeg",
+    note: "I'm a barbie girl 😽",
+    tiltAngle: -5,
+    sticker: "Cute"
   },
   {
     id: 6,
-    title: "Spa Day Hamper",
-    image: "/images/Hampers.png",
-    note: "Relax & unwind 🛁",
-    tiltAngle: 2,
-    sticker: "Loved"
+    title: "The Bear Bros",
+    image: "/images/We_bare_bears.jpeg",
+    note: "Stackable, snackable, ready for hugs! 🐻",
+    tiltAngle: 2
   },
   {
     id: 7,
-    title: "Velvet Bunny",
-    image: "/images/hero.png",
-    note: "Softer than clouds ☁️",
-    tiltAngle: -3
+    title: "Velvet Panda",
+    image: "/images/Softie_panda.jpeg",
+    note: "I'm super soft! 🥺",
+    tiltAngle: -3,
+    sticker: "Loved"
   },
   {
     id: 8,
-    title: "Sweet Treats Box",
-    image: "/images/premium-bg.jpg",
-    note: "Sugar and spice 🍬",
+    title: "Rex the Menace",
+    image: "/images/Crazy_dinausaur.webp",
+    note: "Ready to chomp snacks & steal hearts 🦖",
     tiltAngle: 4,
-    sticker: "Limited"
+    sticker: "Naughty"
   }
 ];
 
