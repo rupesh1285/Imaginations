@@ -1,71 +1,168 @@
 "use client";
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Heart, Sparkles } from "lucide-react";
-import HexagonBackground from "./HexagonBackground"; // Import your new grid!
+import { motion, useScroll, useTransform } from "framer-motion";
+import RoseGoldButton from "../ui/RoseGoldButton";
+import { Heart } from "lucide-react";
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const yBg = useTransform(scrollY, [0, 1000], [0, 300]);
+  const opacityText = useTransform(scrollY, [0, 400], [1, 0]);
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   return (
-    // Make sure overflow-hidden is here so the hexagons don't break the page width
-    <section className="relative pt-40 pb-20 px-6 min-h-screen flex items-center w-full overflow-hidden">
-      
-      {/* 1. Our Code-Generated Hexagon Grid Background */}
-      <HexagonBackground />
+    <section className="relative w-full min-h-[100svh] flex items-center justify-center overflow-hidden bg-transparent">
+      {/* Background Glowing Orbs to reduce dullness */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-[var(--color-soft-pink)]/40 blur-[100px]" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[var(--color-gold)]/20 blur-[120px]" />
+      </div>
 
-      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      {/* Background Floating Particles (CSS or Framer) */}
+      {mounted && (
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+          {[...Array(12)].map((_, i) => (
+            <motion.div
+              key={i}
+              initial={{ 
+                y: Math.random() * 100 - 50, 
+                x: Math.random() * window.innerWidth,
+                opacity: 0,
+                scale: Math.random() * 0.5 + 0.5
+              }}
+              animate={{ 
+                y: [null, -Math.random() * 200 - 100], 
+                opacity: [0, 0.8, 0],
+                rotate: Math.random() * 360
+              }}
+              transition={{ 
+                duration: Math.random() * 5 + 5, 
+                repeat: Infinity, 
+                ease: "linear",
+                delay: Math.random() * 5 
+              }}
+              className="absolute bottom-0 w-3 h-3 rounded-full bg-[var(--color-gold)] blur-[1px]"
+              style={{
+                left: `${Math.random() * 100}%`
+              }}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Main Content Container */}
+      <div className="max-w-[1400px] w-full mx-auto px-6 relative z-10">
         
-        {/* Glassmorphism Text Panel */}
-        <motion.div 
-          initial={{ opacity: 0, x: -40 }} 
-          animate={{ opacity: 1, x: 0 }} 
-          transition={{ duration: 0.8, ease: "easeOut" }} 
-          className="flex flex-col gap-8 bg-white/20 backdrop-blur-2xl border border-white/50 shadow-[0_8px_32px_rgba(212,175,55,0.15)] p-10 rounded-[40px]"
-        >
-          <div className="inline-flex items-center gap-2 bg-white/40 border border-[#D4AF37]/50 px-5 py-2.5 rounded-full w-fit shadow-sm">
-            <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-            <span className="text-sm font-bold text-[#5C3A46] tracking-wider">Premium Gifting</span>
-          </div>
+        {/* Floating Junk Journal Doodles */}
+        <div className="absolute top-10 right-[40%] text-[#B76E79]/40 rotate-12 pointer-events-none">
+           <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 10 Q60 40 90 50 Q60 60 50 90 Q40 60 10 50 Q40 40 50 10Z" fill="currentColor"/>
+           </svg>
+        </div>
+        <div className="absolute bottom-10 left-10 text-[#D4AF37]/40 -rotate-12 pointer-events-none">
+           <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 20 L80 80 M80 20 L20 80 M50 10 L50 90 M10 50 L90 50" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
+           </svg>
+        </div>
 
-          <h2 className="text-5xl md:text-7xl font-bold leading-[1.1] text-[#3A222C]">
-            Gifts that <br/> feel like a <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#E8A5B0] to-[#D4AF37] font-miniver text-6xl md:text-8xl drop-shadow-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Asymmetrical Left Text */}
+          <div className="lg:col-span-5 flex flex-col items-start pt-10">
+            <motion.div 
+              initial={{ opacity: 0, y: 30, rotate: -2 }}
+              animate={{ opacity: 1, y: 0, rotate: -2 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-[#5C3A46]/5 px-4 py-1 rounded-sm border border-[#5C3A46]/10 mb-6"
+            >
+              <span className="font-bold text-[#5C3A46] tracking-[0.2em] text-sm uppercase">Premium Gifting</span>
+            </motion.div>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-5xl md:text-7xl font-bold leading-tight text-[#3A222C]"
+          >
+            Gifts that feel <br className="hidden lg:block"/> like a{" "}
+            <span className="font-miniver text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-rose-gold)] to-[var(--color-gold)] font-normal block mt-2">
               warm hug.
             </span>
-          </h2>
-          
-          <p className="text-lg text-[#5C3A46] font-medium leading-relaxed">
-            Skip the generic. Discover beautifully curated surprises designed to make them smile instantly.
-          </p>
-          
-          <div className="flex flex-wrap gap-4 pt-4">
-            <Link href="/blushies" className="group flex items-center gap-2 bg-gradient-to-r from-[#D4AF37] to-[#FFDF73] text-[#3A222C] px-8 py-4 rounded-full font-bold shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:shadow-[0_0_30px_rgba(212,175,55,0.7)] transition-all transform hover:-translate-y-1">
-              Explore Blushies <Heart className="w-5 h-5 fill-[#3A222C] group-hover:scale-110 transition-transform" />
-            </Link>
-            <Link href="/contact" className="group flex items-center gap-2 bg-white/30 backdrop-blur-md border-2 border-white/60 text-[#3A222C] px-8 py-4 rounded-full font-bold hover:bg-white/60 transition-all transform hover:-translate-y-1">
-              Craft a Memory
-            </Link>
-          </div>
-        </motion.div>
+          </motion.h1>
 
-        {/* Floating Glass Image Panels */}
-        <div className="relative h-[600px] hidden lg:block">
-          <motion.div 
-            animate={{ y: [0, -15, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} 
-            className="absolute top-5 right-5 w-[380px] h-[480px] rounded-[40px] overflow-hidden bg-white/30 backdrop-blur-2xl border border-white/50 shadow-[0_20px_50px_rgba(58,34,44,0.2)] p-3 z-20 will-change-transform"
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="text-lg md:text-xl text-[var(--color-plum)]/80 max-w-lg mt-4 font-medium"
           >
-            <img src="/images/hero.png" alt="Premium Gift" className="w-full h-full object-cover rounded-[30px]" />
-          </motion.div>
-          
+            Skip the generic. Discover beautifully curated surprises designed to make them smile instantly.
+          </motion.p>
+
           <motion.div 
-            animate={{ y: [0, 20, 0] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }} 
-            className="absolute bottom-10 right-[350px] w-[240px] h-[300px] rounded-[30px] overflow-hidden bg-white/30 backdrop-blur-2xl border border-white/50 shadow-[0_15px_40px_rgba(212,175,55,0.15)] p-2 z-30 will-change-transform"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            className="flex flex-wrap gap-4 mt-6 justify-center lg:justify-start"
           >
-            <img src="/images/Hampers.png" alt="Luxury Hamper" className="w-full h-full object-cover rounded-[20px]" />
+            <Link href="/blushies" className="group">
+              <RoseGoldButton>
+                Explore Blushies
+                <Heart className="w-4 h-4 ml-1 fill-white/20 group-hover:fill-white group-hover:scale-110 transition-all" />
+              </RoseGoldButton>
+            </Link>
+            
+            <Link href="/contact">
+              <RoseGoldButton variant="outline">
+                Craft a Memory
+              </RoseGoldButton>
+            </Link>
           </motion.div>
         </div>
 
-      </div>
+        {/* Right Side: The Vintage Envelope / Tear Reveal */}
+        <motion.div 
+          style={{ y: yBg }}
+          initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1, delay: 0.3, type: "spring", stiffness: 100 }}
+          className="lg:col-span-7 relative w-full max-w-md mx-auto lg:max-w-full aspect-[4/5] lg:aspect-auto lg:h-[600px] flex items-center justify-center"
+        >
+          {/* Main Polaroid */}
+          <div className="absolute inset-0 bg-[#FDFAFA] p-4 pb-16 rounded-md shadow-2xl border border-[#E0E0E0] rotate-3 hover:rotate-0 transition-transform duration-500 z-20">
+             {/* Washi Tape */}
+             <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-[var(--color-soft-pink)]/50 backdrop-blur-md -rotate-2 z-30 border border-white/20 shadow-sm" />
+             
+             <div className="w-full h-full bg-[var(--color-beige)] overflow-hidden relative border border-[#E0E0E0]/50">
+               <img 
+                 src="/images/hero.png" 
+                 alt="Beautiful Blushie Gift" 
+                 className="w-full h-full object-cover"
+               />
+               <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(0,0,0,0.1)] pointer-events-none" />
+             </div>
+             
+             <p className="absolute bottom-5 w-full text-center left-0 font-miniver text-2xl text-[var(--color-plum)] -rotate-2">
+               For you, with love.
+             </p>
+          </div>
+
+          {/* Background offset polaroid for depth */}
+          <div className="absolute inset-0 bg-white p-4 pb-16 rounded-md shadow-lg border border-[#E0E0E0] -rotate-6 scale-95 z-10 translate-x-4 translate-y-4 opacity-70 pointer-events-none">
+             <div className="w-full h-full bg-[#f0e6d6]">
+                <img src="/images/Hampers.png" alt="Hamper Box" className="w-full h-full object-cover opacity-80 mix-blend-multiply" />
+             </div>
+          </div>
+
+        </motion.div>
+
+        </div> {/* Closes Grid */}
+
+      </div> {/* Closes Main Content Container */}
     </section>
   );
 }

@@ -3,11 +3,20 @@
 @theme {
   --font-poppins: var(--font-poppins);
   --font-miniver: var(--font-miniver);
+
+  /* New Theme Colors */
+  --color-beige: #FAF3E0;
+  --color-soft-pink: #F9C5D1;
+  --color-plum: #5C3A46;
+  --color-gold: #D4AF37;
+  --color-rose-gold: #B76E79;
+  --color-silver: #E0E0E0;
 }
 
 body {
   overflow-x: hidden;
-  background-color: #F5EDED; /* Soft Marble Base */
+  background-color: var(--color-beige);
+  color: var(--color-plum);
 }
 
 /* Force links to inherit so they don't turn default blue */
@@ -18,10 +27,46 @@ a {
 
 /* Luxury Swiper Overrides - Glowing Gold */
 .swiper-pagination-bullet-active {
-  background-color: #D4AF37 !important;
+  background-color: var(--color-gold) !important;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
 }
 .swiper-button-next, .swiper-button-prev {
-  color: #D4AF37 !important;
+  color: var(--color-gold) !important;
   text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Torn Paper Edges utility class */
+.torn-edge-top {
+  clip-path: polygon(
+    0% 5px, 5% 0px, 10% 6px, 15% 1px, 20% 7px, 25% 2px, 30% 8px, 35% 3px, 
+    40% 9px, 45% 4px, 50% 10px, 55% 5px, 60% 11px, 65% 6px, 70% 12px, 
+    75% 7px, 80% 13px, 85% 8px, 90% 14px, 95% 9px, 100% 15px, 
+    100% 100%, 0% 100%
+  );
+}
+
+.torn-edge-bottom {
+  clip-path: polygon(
+    0% 0%, 100% 0%, 
+    100% calc(100% - 15px), 95% calc(100% - 9px), 90% calc(100% - 14px), 
+    85% calc(100% - 8px), 80% calc(100% - 13px), 75% calc(100% - 7px), 
+    70% calc(100% - 12px), 65% calc(100% - 6px), 60% calc(100% - 11px), 
+    55% calc(100% - 5px), 50% calc(100% - 10px), 45% calc(100% - 4px), 
+    40% calc(100% - 9px), 35% calc(100% - 3px), 30% calc(100% - 8px), 
+    25% calc(100% - 2px), 20% calc(100% - 7px), 15% calc(100% - 1px), 
+    10% calc(100% - 6px), 5% calc(100% - 0px), 0% calc(100% - 5px)
+  );
+}
+
+/* Scrapbook Textures */
+.bg-diy-grid {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(212, 175, 55, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 175, 55, 0.15) 1px, transparent 1px);
+}
+
+.bg-diy-dots {
+  background-image: radial-gradient(rgba(183, 110, 121, 0.2) 2px, transparent 2px);
+  background-size: 20px 20px;
 }
