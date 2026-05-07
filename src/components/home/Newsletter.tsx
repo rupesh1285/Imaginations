@@ -98,29 +98,36 @@ export default function Newsletter() {
              style={{ background: 'radial-gradient(circle, rgba(138,80,96,0.5) 0%, rgba(122,74,90,0.2) 40%, transparent 70%)' }}
            />
 
-           {/* Envelope Wrapper */}
-           <motion.div 
-              initial={{ opacity: 0, scale: 0.9, rotateZ: -5 }}
-              whileInView={{ opacity: 1, scale: 1, rotateZ: 2 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, type: "spring", stiffness: 80 }}
-              className="relative w-[450px] h-[325px] md:w-[625px] md:h-[450px] md:mr-8 hover:rotateZ-0 hover:scale-[1.04] hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group"
+           {/* Floating Idle Animation Wrapper */}
+           <motion.div
+             animate={{ y: [0, -15, 0] }}
+             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+             className="relative z-20"
            >
-              
-              {/* Envelope Image Replacement */}
-              <div className="absolute inset-0 z-10 transition-all duration-700 group-hover:drop-shadow-[0_50px_80px_rgba(0,0,0,0.6)]">
-                 <Image src="/images/envelope.png" alt="Premium Velvet Envelope" fill priority unoptimized quality={100} className="object-contain pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] will-change-transform" />
-              </div>
-
-              {/* Orchid Image */}
+              {/* Envelope Wrapper */}
               <motion.div 
-                 className="absolute -bottom-6 -left-16 w-52 h-52 md:w-72 md:h-72 md:-bottom-8 md:-left-20 z-30 drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] group-hover:drop-shadow-[0_30px_50px_rgba(0,0,0,0.5)] transition-all duration-700"
-                 whileHover={{ scale: 1.08, rotate: -5 }}
-                 transition={{ duration: 0.5 }}
+                 initial={{ opacity: 0, scale: 0.9, rotateZ: -5 }}
+                 whileInView={{ opacity: 1, scale: 1, rotateZ: 2 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 1, type: "spring", stiffness: 80 }}
+                 className="relative w-[450px] h-[325px] md:w-[625px] md:h-[450px] md:mr-8 hover:rotateZ-0 hover:scale-[1.04] hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group"
               >
-                 <Image src="/images/orchid.png" alt="Pink Orchid" fill unoptimized quality={100} className="object-contain pointer-events-none" />
-              </motion.div>
+                 
+                 {/* Envelope Image Replacement */}
+                 <div className="absolute inset-0 z-10 transition-all duration-700 group-hover:drop-shadow-[0_50px_80px_rgba(0,0,0,0.6)]">
+                    <Image src="/images/envelope.png" alt="Premium Velvet Envelope" fill priority unoptimized quality={100} className="object-contain pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] will-change-transform" />
+                 </div>
 
+                 {/* Orchid Image */}
+                 <motion.div 
+                    className="absolute -bottom-6 -left-16 w-52 h-52 md:w-72 md:h-72 md:-bottom-8 md:-left-20 z-30 drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] group-hover:drop-shadow-[0_30px_50px_rgba(0,0,0,0.5)] transition-all duration-700"
+                    whileHover={{ scale: 1.08, rotate: -5 }}
+                    transition={{ duration: 0.5 }}
+                 >
+                    <Image src="/images/orchid.png" alt="Pink Orchid" fill unoptimized quality={100} className="object-contain pointer-events-none" />
+                 </motion.div>
+
+              </motion.div>
            </motion.div>
         </div>
 
