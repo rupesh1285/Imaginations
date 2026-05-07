@@ -9,30 +9,62 @@ const topPicks = [
   {
     id: 1,
     title: "Rosy Bunny",
-    image: "/images/hero.png", // Replace
+    image: "/images/hero.png",
     note: "I'm super soft! 🥺",
-    tiltAngle: -3
+    tiltAngle: -3,
+    sticker: "Best Seller"
   },
   {
     id: 2,
     title: "Golden Bear",
-    image: "/images/Hampers.png", // Replace
+    image: "/images/Hampers.png",
     note: "Take me home! 💖",
     tiltAngle: 4
   },
   {
     id: 3,
     title: "Plum Kitty",
-    image: "/images/premium-bg.jpg", // Replace
+    image: "/images/premium-bg.jpg",
     note: "Perfect cuddles! ✨",
-    tiltAngle: -2
+    tiltAngle: -2,
+    sticker: "New"
   },
   {
     id: 4,
     title: "Beige Puppy",
-    image: "/images/hero.png", // Replace
+    image: "/images/hero.png",
     note: "Your new bestie 🐾",
     tiltAngle: 3
+  },
+  {
+    id: 5,
+    title: "Blushie Kitten",
+    image: "/images/hero.png",
+    note: "Purr-fect gift 🐱",
+    tiltAngle: -5
+  },
+  {
+    id: 6,
+    title: "Spa Day Hamper",
+    image: "/images/Hampers.png",
+    note: "Relax & unwind 🛁",
+    tiltAngle: 2,
+    sticker: "Loved"
+  },
+  {
+    id: 7,
+    title: "Velvet Bunny",
+    image: "/images/hero.png",
+    note: "Softer than clouds ☁️",
+    tiltAngle: -3
+  },
+  {
+    id: 8,
+    title: "Sweet Treats Box",
+    image: "/images/premium-bg.jpg",
+    note: "Sugar and spice 🍬",
+    tiltAngle: 4,
+    sticker: "Limited"
   }
 ];
 
@@ -101,6 +133,7 @@ export default function TopPicks() {
                 imageSrc={pick.image}
                 note={pick.note}
                 tiltAngle={pick.tiltAngle}
+                sticker={pick.sticker}
               />
             </motion.div>
           ))}

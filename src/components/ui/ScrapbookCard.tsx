@@ -6,9 +6,10 @@ interface ScrapbookCardProps {
   title: string;
   note?: string;
   tiltAngle?: number;
+  sticker?: string;
 }
 
-export default function ScrapbookCard({ imageSrc, title, note, tiltAngle = 0 }: ScrapbookCardProps) {
+export default function ScrapbookCard({ imageSrc, title, note, tiltAngle = 0, sticker }: ScrapbookCardProps) {
   return (
     <motion.div
       initial={{ rotate: tiltAngle }}
@@ -19,6 +20,13 @@ export default function ScrapbookCard({ imageSrc, title, note, tiltAngle = 0 }: 
       {/* Washi Tape at the top */}
       <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 bg-[var(--color-soft-pink)]/60 backdrop-blur-sm -rotate-2 z-10 shadow-sm border border-white/20" />
       
+      {/* Sticker Badge */}
+      {sticker && (
+        <div className="absolute -top-4 -right-4 bg-[#D4AF37] text-white font-poppins font-bold text-xs px-3 py-1 rounded-full shadow-md rotate-12 z-30 border border-white">
+          {sticker}
+        </div>
+      )}
+
       {/* Photo Area */}
       <div className="w-full h-56 md:h-64 bg-[var(--color-beige)] overflow-hidden rounded-sm relative border border-[#E0E0E0]/50">
         <img 

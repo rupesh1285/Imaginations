@@ -9,6 +9,7 @@ const categories = [
   {
     id: "hampers",
     name: "Luxury Hampers",
+    desc: "Curated boxes of joy",
     image: "/images/Hampers.png", // Replace with real
     color: "bg-[#E8A5B0]", // Deeper pink
     rotation: -4
@@ -16,6 +17,7 @@ const categories = [
   {
     id: "plushies",
     name: "Soft Blushies",
+    desc: "Huggable companions",
     image: "/images/hero.png", // Replace with real
     color: "bg-[#D4AF37]", // Gold
     rotation: 3
@@ -23,6 +25,7 @@ const categories = [
   {
     id: "accessories",
     name: "Accessories",
+    desc: "Little shiny things",
     image: "/images/premium-bg.jpg", // Placeholder
     color: "bg-[#B76E79]", // Rose gold
     rotation: -2
@@ -88,9 +91,10 @@ export default function CategoryExplore() {
                 </div>
 
                 {/* Hand-written Label */}
-                <div className="mt-4 bg-[#FDFAFA] px-6 py-2 shadow-[2px_4px_10px_rgba(0,0,0,0.1)] rotate-[-4deg] group-hover:rotate-0 transition-all border border-[#E3D1D1] relative">
+                <div className="mt-4 bg-[#FDFAFA] px-6 py-3 shadow-[2px_4px_10px_rgba(0,0,0,0.1)] rotate-[-4deg] group-hover:rotate-0 transition-all border border-[#E3D1D1] relative flex flex-col items-center">
                   <div className="absolute top-1 left-2 w-2 h-2 rounded-full bg-[#E8A5B0]" />
                   <h3 className="font-poppins font-bold text-[var(--color-plum)]">{category.name}</h3>
+                  <p className="font-miniver text-sm text-[var(--color-plum)]/60 mt-1">{category.desc}</p>
                 </div>
               </motion.div>
             </Link>

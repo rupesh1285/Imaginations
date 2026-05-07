@@ -4,6 +4,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import CategoryExplore from "@/components/home/CategoryExplore";
+import HowItWorks from "@/components/home/HowItWorks";
+import HamperAnatomy from "@/components/home/HamperAnatomy";
 import TopPicks from "@/components/home/TopPicks";
 import CustomGifting from "@/components/home/CustomGifting";
 import Testimonials from "@/components/home/Testimonials";
@@ -28,6 +30,8 @@ export default function Home() {
       <div className="relative z-10 flex flex-col items-center w-full">
         <Hero />
         <CategoryExplore />
+        <HowItWorks />
+        <HamperAnatomy />
         <TopPicks />
         <CustomGifting />
         <Testimonials />

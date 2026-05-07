@@ -163,6 +163,25 @@ export default function Hero() {
         </div> {/* Closes Grid */}
 
       </div> {/* Closes Main Content Container */}
+
+      {/* Scrolling Marquee */}
+      <div className="absolute bottom-0 left-0 w-full bg-[#5C3A46] text-[#F9C5D1] py-3 overflow-hidden border-t border-[#D4AF37]/30 z-20">
+        <motion.div
+          animate={{ x: [0, -1000] }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
+          className="flex whitespace-nowrap gap-12 font-miniver text-xl tracking-wide"
+        >
+          <span>✨ Hand-packed with love ✨</span>
+          <span>🎁 Premium custom gifting 🎁</span>
+          <span>💖 Delivered to their door 💖</span>
+          <span>✨ Hand-packed with love ✨</span>
+          <span>🎁 Premium custom gifting 🎁</span>
+          <span>💖 Delivered to their door 💖</span>
+          <span>✨ Hand-packed with love ✨</span>
+          <span>🎁 Premium custom gifting 🎁</span>
+          <span>💖 Delivered to their door 💖</span>
+        </motion.div>
+      </div>
     </section>
   );
 }
