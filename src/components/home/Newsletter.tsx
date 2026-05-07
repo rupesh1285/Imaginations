@@ -69,7 +69,7 @@ export default function Newsletter() {
            </div>
 
            <span className="font-miniver text-4xl md:text-5xl text-[#B76E79] mb-[-10px] ml-2 drop-shadow-sm">Accept the</span>
-           <h2 className="text-5xl md:text-7xl font-medium text-[#5C3A46] leading-none mb-6 font-serif tracking-tight drop-shadow-sm italic">
+           <h2 className="text-5xl md:text-7xl font-medium text-[#5C3A46] leading-none mb-6 font-serif tracking-[0.1em] drop-shadow-sm italic">
              INVITATION
            </h2>
            <p className="text-[#5C3A46] text-lg md:text-xl mb-10 font-medium max-w-md leading-relaxed">
