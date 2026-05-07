@@ -26,7 +26,36 @@ export default function Hero() {
         <div className="absolute top-0 left-0 w-[150%] md:w-[120%] lg:w-[65%] h-full bg-[#E8A5B0]" style={{ clipPath: 'polygon(0 0, 100% 0, 75% 100%, 0% 100%)' }}>
            {/* Flap Texture */}
            <div className="absolute inset-0 opacity-10 mix-blend-multiply bg-diy-grid" />
+           
+           {/* Stitched Edge */}
+           <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+              <line x1="100%" y1="0" x2="75%" y2="100%" stroke="rgba(255,255,255,0.5)" strokeWidth="4" strokeDasharray="12 12" />
+           </svg>
         </div>
+      </div>
+
+      {/* Vintage Postage Stamps */}
+      <div className="absolute top-10 right-10 md:right-20 z-0 opacity-90 drop-shadow-md pointer-events-none">
+         <div className="absolute top-0 right-0 w-16 h-20 bg-[#f0e6d6] border-[3px] border-dashed border-white shadow-sm rotate-[10deg]">
+            <div className="m-1 w-[3.25rem] h-[4.25rem] border border-[#5C3A46]/20 bg-[#E8A5B0]/20 flex items-center justify-center">
+               <span className="text-[10px] text-[#5C3A46] font-bold opacity-50">15¢</span>
+            </div>
+         </div>
+         <div className="absolute top-4 right-12 w-20 h-16 bg-[#f0e6d6] border-[3px] border-dashed border-white shadow-sm rotate-[-5deg]">
+            <div className="m-1 w-[4.25rem] h-[3.25rem] border border-[#5C3A46]/20 bg-[#D4AF37]/20 flex items-center justify-center">
+               <span className="text-[10px] text-[#5C3A46] font-bold opacity-50">BLUSH</span>
+            </div>
+         </div>
+      </div>
+
+      {/* Wax Seal */}
+      <div className="absolute bottom-[10%] left-[65%] lg:left-[55%] z-20 pointer-events-none drop-shadow-2xl rotate-12 scale-110">
+         <svg width="100" height="100" viewBox="0 0 100 100" fill="none" className="text-[#5A2A38]">
+            <path d="M50 5 L60 15 L75 10 L80 25 L95 30 L90 45 L100 60 L85 70 L90 85 L75 85 L65 95 L50 90 L35 95 L25 85 L10 85 L15 70 L0 60 L10 45 L5 30 L20 25 L25 10 L40 15 Z" fill="currentColor"/>
+            <circle cx="50" cy="50" r="35" fill="#4A232E" />
+            <circle cx="50" cy="50" r="30" stroke="#D4AF37" strokeWidth="1" strokeDasharray="4 2" fill="none" />
+            <path d="M40 40 Q50 30 60 40 Q70 50 60 60 Q50 70 40 60 Q30 50 40 40 Z" fill="#D4AF37" opacity="0.8" />
+         </svg>
       </div>
 
       {/* Background Floating Particles (CSS or Framer) */}
@@ -137,7 +166,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 1, delay: 0.3, type: "spring", stiffness: 100 }}
-          className="lg:col-span-7 relative w-full max-w-md mx-auto lg:max-w-full aspect-[4/5] lg:aspect-auto lg:h-[600px] flex items-center justify-center"
+          className="lg:col-span-7 relative w-full max-w-md mx-auto lg:max-w-full aspect-[4/5] lg:aspect-auto lg:h-[600px] flex items-center justify-center mt-12 lg:mt-0"
         >
           {/* Main Polaroid */}
           <div className="absolute inset-0 bg-[#FDFAFA] p-4 pb-16 rounded-md shadow-2xl border border-[#E0E0E0] rotate-3 hover:rotate-0 transition-transform duration-500 z-20">
@@ -170,25 +199,6 @@ export default function Hero() {
         </div> {/* Closes Grid */}
 
       </div> {/* Closes Main Content Container */}
-
-      {/* Scrolling Marquee */}
-      <div className="absolute bottom-0 left-0 w-full bg-[#5C3A46] text-[#F9C5D1] py-3 overflow-hidden border-t border-[#D4AF37]/30 z-20">
-        <motion.div
-          animate={{ x: [0, -1000] }}
-          transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
-          className="flex whitespace-nowrap gap-12 font-miniver text-xl tracking-wide"
-        >
-          <span>✨ Hand-packed with love ✨</span>
-          <span>🎁 Premium custom gifting 🎁</span>
-          <span>💖 Delivered to their door 💖</span>
-          <span>✨ Hand-packed with love ✨</span>
-          <span>🎁 Premium custom gifting 🎁</span>
-          <span>💖 Delivered to their door 💖</span>
-          <span>✨ Hand-packed with love ✨</span>
-          <span>🎁 Premium custom gifting 🎁</span>
-          <span>💖 Delivered to their door 💖</span>
-        </motion.div>
-      </div>
     </section>
   );
 }
