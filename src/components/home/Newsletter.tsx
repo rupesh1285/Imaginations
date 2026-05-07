@@ -104,18 +104,18 @@ export default function Newsletter() {
               whileInView={{ opacity: 1, scale: 1, rotateZ: 2 }}
               viewport={{ once: true }}
               transition={{ duration: 1, type: "spring", stiffness: 80 }}
-              className="relative w-[450px] h-[325px] md:w-[625px] md:h-[450px] md:mr-8 hover:rotateZ-0 hover:scale-[1.02] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group"
+              className="relative w-[450px] h-[325px] md:w-[625px] md:h-[450px] md:mr-8 hover:rotateZ-0 hover:scale-[1.04] hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group"
            >
               
               {/* Envelope Image Replacement */}
-              <div className="absolute inset-0 z-10">
-                 <Image src="/images/envelope.png" alt="Premium Velvet Envelope" fill priority unoptimized quality={100} className="object-contain pointer-events-none drop-shadow-lg will-change-transform" />
+              <div className="absolute inset-0 z-10 transition-all duration-700 group-hover:drop-shadow-[0_50px_80px_rgba(0,0,0,0.6)]">
+                 <Image src="/images/envelope.png" alt="Premium Velvet Envelope" fill priority unoptimized quality={100} className="object-contain pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] will-change-transform" />
               </div>
 
               {/* Orchid Image */}
               <motion.div 
-                 className="absolute -bottom-6 -left-16 w-52 h-52 md:w-72 md:h-72 md:-bottom-8 md:-left-20 z-30 drop-shadow-xl"
-                 whileHover={{ scale: 1.05, rotate: -5 }}
+                 className="absolute -bottom-6 -left-16 w-52 h-52 md:w-72 md:h-72 md:-bottom-8 md:-left-20 z-30 drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] group-hover:drop-shadow-[0_30px_50px_rgba(0,0,0,0.5)] transition-all duration-700"
+                 whileHover={{ scale: 1.08, rotate: -5 }}
                  transition={{ duration: 0.5 }}
               >
                  <Image src="/images/orchid.png" alt="Pink Orchid" fill unoptimized quality={100} className="object-contain pointer-events-none" />
