@@ -90,7 +90,7 @@ export default function Newsletter() {
 
               {/* Orchid Image */}
               <motion.div 
-                 className="absolute -bottom-12 -left-12 w-40 h-40 md:w-56 md:h-56 z-30 drop-shadow-xl"
+                 className="absolute -bottom-6 -left-16 w-52 h-52 md:w-72 md:h-72 md:-bottom-8 md:-left-20 z-30 drop-shadow-xl"
                  whileHover={{ scale: 1.05, rotate: -5 }}
                  transition={{ duration: 0.5 }}
               >
