@@ -80,7 +80,7 @@ export default function Newsletter() {
              <input 
                type="email" 
                placeholder="Your mail address..." 
-               className="w-full bg-[#FDFAFA] border border-[#E3D1D1] rounded-full pl-6 pr-36 py-4 outline-none focus:border-[#D4AF37] transition-all text-[#5C3A46] placeholder-[#5C3A46]/40 font-medium shadow-[inset_0_2px_5px_rgba(0,0,0,0.02)] text-base"
+               className="w-full bg-white/50 border-[1.5px] border-[#B76E79] rounded-full pl-6 pr-36 py-4 outline-none focus:border-[#D4AF37] transition-all text-[#5C3A46] placeholder-[#5C3A46]/50 font-medium shadow-[inset_0_2px_5px_rgba(0,0,0,0.02)] text-base"
                required
              />
              <button type="submit" className="absolute right-1 top-1 bottom-1 px-8 bg-[#B76E79] text-white rounded-full text-sm font-medium border border-[#D4AF37] shadow-sm hover:bg-[#A65D68] transition-colors">
