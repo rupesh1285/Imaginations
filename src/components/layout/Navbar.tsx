@@ -15,7 +15,7 @@ export default function Navbar() {
       initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}
       className="fixed w-full z-50 top-4 px-4 md:px-8"
     >
-      <div className="max-w-7xl mx-auto bg-white/50 backdrop-blur-xl border border-[#D4AF37]/30 shadow-lg shadow-[#D4AF37]/10 rounded-full px-6 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto bg-[#FCF9F2]/95 backdrop-blur-xl border border-[#EBE3D5] border-b-[#D4AF37] shadow-lg shadow-[#D4AF37]/10 rounded-full px-6 py-3 flex items-center justify-between">
         
         <Link href="/" className="flex items-center gap-2 cursor-pointer group text-black">
           <div className="bg-gradient-to-br from-[#D4AF37] to-[#FFDF73] p-2 rounded-full shadow-[0_0_10px_rgba(212,175,55,0.4)] transition-transform group-hover:scale-110">
