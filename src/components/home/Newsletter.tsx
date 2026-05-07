@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 
 export default function Newsletter() {
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center overflow-hidden bg-[#5C3A46] py-24 md:py-32">
+    <section 
+      className="relative w-full min-h-[80vh] flex items-center overflow-hidden py-24 md:py-32"
+      style={{ background: 'radial-gradient(circle at 80% 20%, #562B3C 0%, #2E131E 55%, #12050A 100%)' }}
+    >
       
       {/* SVG Clip Path Definition for the Curved Flap */}
       <svg width="0" height="0" className="absolute">
@@ -16,9 +19,8 @@ export default function Newsletter() {
         </defs>
       </svg>
 
-      {/* 1. Global Plum Background (The inside of the giant envelope) */}
-      <div className="absolute inset-0 z-0 opacity-40 mix-blend-multiply pointer-events-none" style={{ backgroundImage: "url('data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} />
-      <div className="absolute inset-0 z-0 shadow-[inset_0_0_150px_rgba(20,5,20,0.8)] pointer-events-none" />
+      {/* 1. Premium Shiny Plum Background (Replaces the blurry noise texture) */}
+      <div className="absolute inset-0 z-0 pointer-events-none" />
 
       {/* 2. The Soft Curved Pink Flap (Left Side) */}
       <div className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none drop-shadow-[20px_0_40px_rgba(20,5,20,0.6)]">
