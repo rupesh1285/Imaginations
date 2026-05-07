@@ -20,8 +20,8 @@ export default function Home() {
 
       {/* 2. Soft Pink/Plum Gradient Orbs for depth */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#F9C5D1]/30 blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[70vw] h-[70vw] rounded-full bg-[#E8A5B0]/20 blur-[150px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full" style={{ background: 'radial-gradient(circle, rgba(249,197,209,0.3) 0%, transparent 70%)' }} />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[70vw] h-[70vw] rounded-full" style={{ background: 'radial-gradient(circle, rgba(232,165,176,0.2) 0%, transparent 70%)' }} />
       </div>
 
       <Navbar />

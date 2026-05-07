@@ -94,7 +94,7 @@ export default function TopPicks() {
       </div>
 
       {/* Soft Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full bg-[var(--color-soft-pink)]/20 blur-[120px] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full pointer-events-none z-0" style={{ background: 'radial-gradient(circle, rgba(253,241,244,0.3) 0%, transparent 70%)' }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center mb-16">

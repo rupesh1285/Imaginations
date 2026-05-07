@@ -71,8 +71,8 @@ export default function HexagonBackground() {
     <div className="absolute inset-0 z-0 overflow-hidden bg-[#2A1520] pointer-events-none">
       
       {/* 3. Global Glowing Backlight (Creates depth behind the hexagons) */}
-      <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#E8A5B0]/20 blur-[120px] animate-pulse" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#D4AF37]/20 blur-[100px]" />
+      <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full pointer-events-none z-0 animate-pulse" style={{ background: 'radial-gradient(circle, rgba(232,165,176,0.2) 0%, transparent 70%)' }} />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full pointer-events-none z-0" style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%)' }} />
 
       <svg className="w-full h-full relative z-10">
         <defs>

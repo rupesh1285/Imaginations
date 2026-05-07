@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Newsletter() {
   return (
@@ -23,7 +24,7 @@ export default function Newsletter() {
       <div className="absolute inset-0 z-0 pointer-events-none" />
 
       {/* 2. The Soft Curved Pink Flap (Left Side) */}
-      <div className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none drop-shadow-[20px_0_40px_rgba(20,5,20,0.6)]">
+      <div className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none">
         <div 
           className="absolute top-0 left-0 w-[120%] md:w-[75%] lg:w-[60%] h-full bg-[#Fdf1f4]"
           style={{ clipPath: 'url(#curveFlap)' }}
@@ -51,7 +52,7 @@ export default function Newsletter() {
              Join our Blushie family. Uncover secret drops, exclusive hampers, and a world of warm hugs delivered to your inbox.
            </p>
            
-           <form className="flex w-full max-w-md relative group drop-shadow-xl" onSubmit={(e) => e.preventDefault()}>
+           <form className="flex w-full max-w-md relative group shadow-2xl" onSubmit={(e) => e.preventDefault()}>
              <input 
                type="email" 
                placeholder="Your mail address..." 
@@ -64,30 +65,36 @@ export default function Newsletter() {
            </form>
         </motion.div>
 
-        {/* Right Side: Velvet Red Envelope (Sitting ON the brown cardboard) */}
+        {/* Right Side: Velvet Red Envelope */}
         <div className="flex justify-center items-center relative w-full h-[400px] md:h-[600px] perspective-1000 z-20">
            
+           {/* Soft Studio Wall Glow */}
+           <div 
+             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] md:w-[700px] md:h-[700px] rounded-full pointer-events-none z-0"
+             style={{ background: 'radial-gradient(circle, rgba(138,80,96,0.5) 0%, rgba(122,74,90,0.2) 40%, transparent 70%)' }}
+           />
+
            {/* Envelope Wrapper */}
            <motion.div 
               initial={{ opacity: 0, scale: 0.9, rotateZ: -5 }}
               whileInView={{ opacity: 1, scale: 1, rotateZ: 2 }}
               viewport={{ once: true }}
               transition={{ duration: 1, type: "spring", stiffness: 80 }}
-              className="relative w-[450px] h-[325px] md:w-[625px] md:h-[450px] md:mr-8 drop-shadow-[0_40px_60px_rgba(20,5,5,0.7)] hover:rotateZ-0 hover:scale-[1.02] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group"
+              className="relative w-[450px] h-[325px] md:w-[625px] md:h-[450px] md:mr-8 hover:rotateZ-0 hover:scale-[1.02] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group"
            >
               
               {/* Envelope Image Replacement */}
               <div className="absolute inset-0 z-10">
-                 <img src="/images/envelope.png" alt="Premium Velvet Envelope" className="w-full h-full object-contain pointer-events-none drop-shadow-[0_15px_20px_rgba(0,0,0,0.4)]" />
+                 <Image src="/images/envelope.png" alt="Premium Velvet Envelope" fill priority unoptimized quality={100} className="object-contain pointer-events-none drop-shadow-lg will-change-transform" />
               </div>
 
               {/* Orchid Image */}
               <motion.div 
-                 className="absolute -bottom-12 -left-12 w-40 h-40 md:w-56 md:h-56 z-30 drop-shadow-[10px_10px_15px_rgba(0,0,0,0.5)]"
+                 className="absolute -bottom-12 -left-12 w-40 h-40 md:w-56 md:h-56 z-30 drop-shadow-xl"
                  whileHover={{ scale: 1.05, rotate: -5 }}
                  transition={{ duration: 0.5 }}
               >
-                 <img src="/images/orchid.png" alt="Pink Orchid" className="w-full h-full object-contain pointer-events-none" />
+                 <Image src="/images/orchid.png" alt="Pink Orchid" fill unoptimized quality={100} className="object-contain pointer-events-none" />
               </motion.div>
 
            </motion.div>

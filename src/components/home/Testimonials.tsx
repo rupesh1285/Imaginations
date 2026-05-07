@@ -50,7 +50,7 @@ export default function Testimonials() {
       </div>
 
       {/* Soft Glow */}
-      <div className="absolute top-[-20%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-[var(--color-gold)]/10 blur-[100px] pointer-events-none z-0" />
+      <div className="absolute top-[-20%] right-[-10%] w-[50vw] h-[50vw] rounded-full pointer-events-none z-0" style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%)' }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
