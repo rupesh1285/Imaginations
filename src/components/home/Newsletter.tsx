@@ -72,9 +72,9 @@ export default function Newsletter() {
               </svg>
            </div>
 
-           <span className="font-miniver text-4xl md:text-5xl text-[#B76E79] mb-[-10px] ml-2 drop-shadow-sm">Accept the</span>
-           <h2 className="text-5xl md:text-7xl font-medium text-[#5C3A46] leading-none mb-6 font-great-vibes tracking-[0.1em] drop-shadow-sm">
-             INVITATION
+           <span className="font-great-vibes text-4xl md:text-5xl text-[#B76E79] mb-[-6px] ml-2 drop-shadow-sm">Accept the</span>
+           <h2 className="text-6xl md:text-8xl text-[#5C3A46] leading-none mb-6 font-great-vibes drop-shadow-sm">
+             Invitation
            </h2>
            <p className="text-[#5C3A46] text-lg md:text-xl mb-10 font-medium max-w-md leading-relaxed">
              Join our Blushie family. Uncover secret drops, exclusive hampers, and a world of warm hugs delivered to your inbox.
