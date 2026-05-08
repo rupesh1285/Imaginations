@@ -169,23 +169,29 @@ export default function Newsletter() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.6, delay: 0.7 }}
-             className="flex w-full max-w-md relative group"
+             className="w-full max-w-md"
              onSubmit={handleSubmit}
            >
-             <input 
-               type="email" 
-               placeholder="Your mail address..." 
-               className="newsletter-input w-full bg-white/50 border-[1.5px] border-[#B76E79]/60 rounded-full pl-6 pr-36 py-4 outline-none focus:border-[#D4AF37] focus:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-500 text-[#5C3A46] placeholder-[#5C3A46]/40 font-nunito text-sm shadow-[inset_0_2px_5px_rgba(0,0,0,0.02)]"
-               required
-               disabled={isSubmitted}
-             />
-             <button 
-               type="submit" 
-               className="btn-shimmer absolute right-1 top-1 bottom-1 px-8 bg-[#B76E79] text-white rounded-full text-sm font-nunito font-semibold border-[1.5px] border-[#D4AF37] shadow-sm hover:bg-[#D4AF37] hover:text-[#5C3A46] transition-all duration-300 ease-in-out overflow-hidden whitespace-nowrap"
-               disabled={isSubmitted}
-             >
-               {isSubmitted ? '💌 Welcome!' : 'Join Us'}
-             </button>
+             {/* Frosted glass form card */}
+             <div className="bg-white/40 backdrop-blur-sm rounded-2xl p-5 border border-[#B76E79]/20 shadow-lg">
+               <div className="flex items-center gap-3">
+                 <input 
+                   type="email" 
+                   placeholder="Your email address..." 
+                   className="newsletter-input flex-1 min-w-0 bg-white/70 border-[1.5px] border-[#B76E79]/30 rounded-full pl-5 pr-4 py-3.5 outline-none focus:border-[#D4AF37] transition-all duration-500 text-[#5C3A46] placeholder-[#5C3A46]/40 font-nunito text-sm"
+                   required
+                   disabled={isSubmitted}
+                 />
+                 <button 
+                   type="submit" 
+                   className="btn-shimmer flex-shrink-0 px-7 py-3.5 bg-[#B76E79] text-white rounded-full text-sm font-nunito font-semibold border-[1.5px] border-[#D4AF37] shadow-md hover:bg-[#D4AF37] hover:text-[#5C3A46] hover:shadow-lg transition-all duration-300 ease-in-out overflow-hidden whitespace-nowrap"
+                   disabled={isSubmitted}
+                 >
+                   {isSubmitted ? '💌 Welcome!' : 'Join Us'}
+                 </button>
+               </div>
+               <p className="text-[10px] text-[#5C3A46]/40 font-nunito mt-3 ml-2 tracking-wide">No spam ever. Unsubscribe anytime ✨</p>
+             </div>
            </motion.form>
         </div>
 
