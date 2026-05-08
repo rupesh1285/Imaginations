@@ -107,10 +107,10 @@ export default function Newsletter() {
       <div className="max-w-[1400px] w-full mx-auto px-6 relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* Left Side: Premium Typography */}
-        <div className="flex flex-col items-start text-left lg:pr-10 z-30 relative pl-6 md:pl-16 pt-4">
+        <div className="flex flex-col items-start text-left lg:pr-10 z-30 relative pl-6 md:pl-16 pt-4 overflow-visible">
            
            {/* Scrapbook Decorations */}
-           <div className="absolute -top-16 left-2 w-full h-20 pointer-events-none">
+           <div className="absolute -top-16 left-2 w-full h-20 pointer-events-none overflow-visible">
               {/* Gold Sparkle 1 */}
               <svg className="absolute top-2 left-0 w-4 h-4 rotate-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 0C12 0 12 10.5 24 12C24 12 13.5 12 12 24C12 24 12 13.5 0 12C0 12 10.5 12 12 0Z" fill="#D4AF37" opacity="0.7"/>
@@ -163,7 +163,7 @@ export default function Newsletter() {
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.6, delay: 0.15 }}
-             className="font-great-vibes text-3xl md:text-4xl text-[#B76E79] ml-6 drop-shadow-sm block"
+             className="font-great-vibes text-2xl md:text-3xl text-[#B76E79] ml-6 drop-shadow-sm block overflow-visible leading-[1]"
            >
              Accept The
            </motion.span>
@@ -174,7 +174,7 @@ export default function Newsletter() {
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.6, delay: 0.35 }}
-             className="text-6xl md:text-8xl leading-[1] mt-1 mb-3 font-great-vibes drop-shadow-sm overflow-visible ml-6"
+             className="text-5xl md:text-7xl leading-[1] mt-1 mb-3 font-great-vibes drop-shadow-sm overflow-visible ml-6"
              style={{
                background: 'linear-gradient(135deg, #5C3A46 0%, #8B5E6B 30%, #D4AF37 55%, #B76E79 80%, #5C3A46 100%)',
                WebkitBackgroundClip: 'text',
