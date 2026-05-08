@@ -100,3 +100,50 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-plum);
 }
+
+/* Floating Rose Petal Animation */
+@keyframes floatPetal {
+  0% { transform: translateY(0) rotate(45deg); opacity: 0; }
+  10% { opacity: 0.3; }
+  50% { opacity: 0.2; }
+  90% { opacity: 0.1; }
+  100% { transform: translateY(calc(80vh)) rotate(200deg) translateX(40px); opacity: 0; }
+}
+
+.floating-petal {
+  animation: floatPetal 12s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Button Shimmer Sweep */
+@keyframes shimmerSweep {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.btn-shimmer {
+  position: relative;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  animation: shimmerSweep 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Newsletter Input Focus Glow */
+.newsletter-input:focus {
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15), 0 0 40px rgba(212, 175, 55, 0.05) !important;
+}
