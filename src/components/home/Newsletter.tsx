@@ -1,10 +1,53 @@
-"use client";
-
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Newsletter() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [placeholderText, setPlaceholderText] = useState("");
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const placeholders = [
+    "Your best email address...",
+    "Join the Blushie family...",
+    "Claim your secret drops...",
+    "Enter the world of hugs...",
+  ];
+
+  useEffect(() => {
+    let currentText = "";
+    let isDeleting = false;
+    let typingSpeed = 100;
+    let timer: NodeJS.Timeout;
+
+    const handleTyping = () => {
+      const fullText = placeholders[placeholderIndex];
+      
+      if (!isDeleting) {
+        currentText = fullText.substring(0, currentText.length + 1);
+        typingSpeed = 100;
+      } else {
+        currentText = fullText.substring(0, currentText.length - 1);
+        typingSpeed = 50;
+      }
+
+      setPlaceholderText(currentText);
+
+      if (!isDeleting && currentText === fullText) {
+        timer = setTimeout(() => {
+          isDeleting = true;
+          handleTyping();
+        }, 2000);
+      } else if (isDeleting && currentText === "") {
+        isDeleting = false;
+        setPlaceholderIndex((prev) => (prev + 1) % placeholders.length);
+        timer = setTimeout(handleTyping, 500);
+      } else {
+        timer = setTimeout(handleTyping, typingSpeed);
+      }
+    };
+
+    handleTyping();
+    return () => clearTimeout(timer);
+  }, [placeholderIndex]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,7 +107,7 @@ export default function Newsletter() {
       <div className="max-w-[1400px] w-full mx-auto px-6 relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* Left Side: Premium Typography */}
-        <div className="flex flex-col items-start text-left lg:pr-10 z-30 relative pl-4 md:pl-8 pt-4">
+        <div className="flex flex-col items-start text-left lg:pr-10 z-30 relative pl-6 md:pl-16 pt-4">
            
            {/* Scrapbook Decorations */}
            <div className="absolute -top-16 left-2 w-full h-20 pointer-events-none">
@@ -120,7 +163,7 @@ export default function Newsletter() {
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.6, delay: 0.15 }}
-             className="font-great-vibes text-3xl md:text-4xl text-[#B76E79] ml-3 drop-shadow-sm block"
+             className="font-great-vibes text-3xl md:text-4xl text-[#B76E79] ml-6 drop-shadow-sm block"
            >
              Accept The
            </motion.span>
@@ -131,7 +174,7 @@ export default function Newsletter() {
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.6, delay: 0.35 }}
-             className="text-6xl md:text-8xl leading-[1] mt-1 mb-3 font-great-vibes drop-shadow-sm overflow-visible"
+             className="text-6xl md:text-8xl leading-[1] mt-1 mb-3 font-great-vibes drop-shadow-sm overflow-visible ml-6"
              style={{
                background: 'linear-gradient(135deg, #5C3A46 0%, #8B5E6B 30%, #D4AF37 55%, #B76E79 80%, #5C3A46 100%)',
                WebkitBackgroundClip: 'text',
@@ -148,7 +191,7 @@ export default function Newsletter() {
              whileInView={{ scaleX: 1 }}
              viewport={{ once: true }}
              transition={{ duration: 0.8, delay: 0.5 }}
-             className="h-[1.5px] w-24 mt-2 mb-8 origin-left"
+             className="h-[1.5px] w-24 mt-2 mb-8 origin-left ml-6"
              style={{ background: 'linear-gradient(90deg, #D4AF37, #B76E79, transparent)' }}
            />
 
@@ -158,40 +201,51 @@ export default function Newsletter() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.6, delay: 0.55 }}
-             className="text-[#5C3A46]/80 text-base md:text-lg mb-10 font-nunito italic max-w-md leading-relaxed tracking-wide"
+             className="text-[#5C3A46]/80 text-base md:text-lg mb-10 font-nunito italic max-w-md leading-relaxed tracking-wide ml-6"
            >
              Join our Blushie family. Uncover secret drops, exclusive hampers, and a world of warm hugs delivered to your inbox.
            </motion.p>
            
-           {/* Form */}
+           {/* Form - Modern Sleek Glass Bar */}
            <motion.form 
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.6, delay: 0.7 }}
-             className="w-full max-w-md"
+             className="w-full max-w-md relative mt-6 ml-6"
              onSubmit={handleSubmit}
            >
-             {/* Frosted glass form card */}
-             <div className="bg-white/40 backdrop-blur-sm rounded-2xl p-5 border border-[#B76E79]/20 shadow-lg">
-               <div className="flex items-center gap-3">
+             {/* The Sleek Glass Bar with Enhanced Glowing Border */}
+             <div className="relative flex items-center p-[2px] bg-gradient-to-r from-white/60 via-[#D4AF37]/40 to-white/60 rounded-full shadow-[0_20px_50px_rgba(92,58,70,0.15)] group transition-all duration-500 hover:shadow-[0_25px_60px_rgba(212,175,55,0.25)] overflow-hidden">
+               
+               <div className="relative flex items-center w-full bg-[#Fdf1f4]/90 backdrop-blur-2xl rounded-full p-1.5 overflow-hidden">
+                 {/* Subtle Texture Overlay */}
+                 <div className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay" style={{
+                   backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                 }} />
+                 
                  <input 
                    type="email" 
-                   placeholder="Your email address..." 
-                   className="newsletter-input flex-1 min-w-0 bg-white/70 border-[1.5px] border-[#B76E79]/30 rounded-full pl-5 pr-4 py-3.5 outline-none focus:border-[#D4AF37] transition-all duration-500 text-[#5C3A46] placeholder-[#5C3A46]/40 font-nunito text-sm"
+                   placeholder={placeholderText}
+                   className="newsletter-input flex-1 bg-transparent border-none pl-6 pr-4 py-3 outline-none text-[#5C3A46] font-nunito text-base font-semibold placeholder-[#5C3A46]/30 placeholder:font-medium placeholder:italic transition-all duration-300"
                    required
                    disabled={isSubmitted}
                  />
+                 
                  <button 
                    type="submit" 
-                   className="btn-shimmer flex-shrink-0 px-7 py-3.5 bg-[#B76E79] text-white rounded-full text-sm font-nunito font-semibold border-[1.5px] border-[#D4AF37] shadow-md hover:bg-[#D4AF37] hover:text-[#5C3A46] hover:shadow-lg transition-all duration-300 ease-in-out overflow-hidden whitespace-nowrap"
+                   className="btn-shimmer relative px-8 py-3 bg-[#B76E79] text-white rounded-full text-sm font-nunito font-bold border border-[#D4AF37]/50 shadow-lg hover:bg-[#D4AF37] hover:text-[#5C3A46] transition-all duration-500 overflow-hidden whitespace-nowrap active:scale-95"
                    disabled={isSubmitted}
                  >
                    {isSubmitted ? '💌 Welcome!' : 'Join Us'}
                  </button>
                </div>
-               <p className="text-[10px] text-[#5C3A46]/40 font-nunito mt-3 ml-2 tracking-wide">No spam ever. Unsubscribe anytime ✨</p>
              </div>
+             
+             {/* Modern helper text */}
+             <p className="text-[10px] text-[#5C3A46]/40 font-nunito mt-4 ml-6 tracking-widest uppercase font-black">
+               Secret drops • Exclusive hampers • Warm hugs
+             </p>
            </motion.form>
         </div>
 
@@ -202,3 +256,4 @@ export default function Newsletter() {
     </section>
   );
 }
+
