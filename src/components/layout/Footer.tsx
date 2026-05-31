@@ -40,6 +40,7 @@ export default function Footer() {
           <Link href="/policy" className="text-[#Fdf1f4]/80 hover:text-[#D4AF37] transition-colors">Shipping Policy</Link>
           <Link href="/about" className="text-[#Fdf1f4]/80 hover:text-[#D4AF37] transition-colors">About Us</Link>
           <Link href="/contact" className="text-[#Fdf1f4]/80 hover:text-[#D4AF37] transition-colors">Contact Information</Link>
+          <Link href="/admin" className="text-[#Fdf1f4]/80 hover:text-[#D4AF37] transition-colors mt-2 text-sm">Admin Portal</Link>
         </div>
 
         {/* Column 3: Contact */}

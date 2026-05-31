@@ -2,6 +2,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import type { Metadata } from 'next'
 import { Great_Vibes, Nunito, Miniver } from 'next/font/google'
 import './globals.css'
+import ShinyHeartCursor from "@/components/ui/ShinyHeartCursor";
 
 const greatVibes = Great_Vibes({ 
   subsets: ['latin'], 
@@ -52,7 +53,7 @@ export default function RootLayout({
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
         </head>
         <body className={`${greatVibes.variable} ${nunito.variable} ${miniver.variable} font-nunito`} suppressHydrationWarning>
-
+          <ShinyHeartCursor />
           {children}
         </body>
       </html>
