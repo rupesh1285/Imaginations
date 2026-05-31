@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function ShinyHeartCursor() {
+  const mousePos = useRef<{x: number, y: number} | null>(null);
+
   useEffect(() => {
     // Only run on desktop
     if (window.innerWidth < 768) return;
@@ -15,12 +17,7 @@ export default function ShinyHeartCursor() {
     ];
     let lastSpawnTime = 0;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      const now = Date.now();
-      // Slightly longer spawn rate for an elegant trail rather than a chaotic explosion
-      if (now - lastSpawnTime < 80) return; 
-      lastSpawnTime = now;
-
+    const spawnHeart = (x: number, y: number) => {
       const heart = document.createElement("div");
       
       const isHollow = Math.random() > 0.5;
@@ -47,8 +44,8 @@ export default function ShinyHeartCursor() {
       
       heart.style.position = "fixed";
       // Offset slightly so it trails from the pointer tip
-      heart.style.left = `${e.clientX + 10}px`;
-      heart.style.top = `${e.clientY + 10}px`;
+      heart.style.left = `${x + 10}px`;
+      heart.style.top = `${y + 10}px`;
       heart.style.pointerEvents = "none";
       heart.style.zIndex = "999999";
       heart.style.width = `${size}px`;
@@ -80,8 +77,31 @@ export default function ShinyHeartCursor() {
       };
     };
 
+    const handleMouseMove = (e: MouseEvent) => {
+      mousePos.current = { x: e.clientX, y: e.clientY };
+      const now = Date.now();
+      // Slightly longer spawn rate for an elegant trail rather than a chaotic explosion
+      if (now - lastSpawnTime < 80) return; 
+      lastSpawnTime = now;
+      spawnHeart(e.clientX, e.clientY);
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+
+    // Eject hearts even when idle
+    const idleInterval = setInterval(() => {
+      const now = Date.now();
+      // If the mouse hasn't moved in the last 150ms, spawn a heart at the last known position
+      if (now - lastSpawnTime > 150 && mousePos.current) {
+        spawnHeart(mousePos.current.x, mousePos.current.y);
+        lastSpawnTime = now;
+      }
+    }, 250);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      clearInterval(idleInterval);
+    };
   }, []);
 
   return null;

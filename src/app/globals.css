@@ -25,12 +25,16 @@
 }
 
 /* Custom Luxury Cursors */
-body {
-  cursor: url("data:image/svg+xml;utf8,<svg width='28' height='28' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 2.5L19.5 10.5L11.5 13.5L7.5 21.5L4.5 2.5Z' fill='%23D4AF37' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round'/></svg>") 4 2, auto;
+body, html, * {
+  cursor: url("data:image/svg+xml;utf8,<svg width='28' height='28' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 2.5L19.5 10.5L11.5 13.5L7.5 21.5L4.5 2.5Z' fill='%23D4AF37' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round'/></svg>") 4 2, auto !important;
 }
 
-a, button, [role="button"], summary {
-  cursor: url("data:image/svg+xml;utf8,<svg width='28' height='28' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 2.5L19.5 10.5L11.5 13.5L7.5 21.5L4.5 2.5Z' fill='%23A40000' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round'/></svg>") 4 2, pointer;
+a, a *, button, button *, [role="button"], [role="button"] *, summary, summary *, .cursor-pointer, .cursor-pointer *, [href], [href] * {
+  cursor: url("data:image/svg+xml;utf8,<svg width='28' height='28' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 2.5L19.5 10.5L11.5 13.5L7.5 21.5L4.5 2.5Z' fill='%23A40000' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round'/></svg>") 4 2, pointer !important;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], textarea, .cursor-text, .cursor-text * {
+  cursor: text !important;
 }
 
 body {
