@@ -45,12 +45,17 @@ export default async function BlushiesPage({
   });
 
   return (
-    <main className="min-h-screen bg-[#Fdf1f4] flex flex-col font-nunito relative overflow-hidden">
-      {/* Designer Background Elements */}
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full mix-blend-multiply opacity-60 blur-3xl animate-pulse" style={{ background: 'radial-gradient(circle, rgba(249,197,209,0.8) 0%, transparent 70%)', animationDuration: '8s' }} />
-        <div className="absolute top-[20%] right-[-5%] w-[40vw] h-[40vw] rounded-full mix-blend-multiply opacity-50 blur-3xl animate-pulse" style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.3) 0%, transparent 70%)', animationDuration: '12s' }} />
-        <div className="absolute bottom-[-10%] left-[20%] w-[60vw] h-[60vw] rounded-full mix-blend-multiply opacity-40 blur-3xl animate-pulse" style={{ background: 'radial-gradient(circle, rgba(232,165,176,0.6) 0%, transparent 70%)', animationDuration: '10s' }} />
+    <main className="min-h-screen flex flex-col font-nunito relative overflow-hidden text-black">
+      {/* Designer Aurora Background */}
+      <div className="fixed inset-0 pointer-events-none -z-10 bg-[#Fdf1f4] overflow-hidden">
+        {/* Animated Mesh Gradients */}
+        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full mix-blend-multiply filter blur-[100px] opacity-60 animate-blob" style={{ backgroundColor: '#F9C5D1', animationDuration: '20s' }} />
+        <div className="absolute top-[10%] right-[-10%] w-[50vw] h-[50vw] rounded-full mix-blend-multiply filter blur-[120px] opacity-40 animate-blob animation-delay-2000" style={{ backgroundColor: '#D4AF37', animationDuration: '25s' }} />
+        <div className="absolute bottom-[-20%] left-[20%] w-[70vw] h-[70vw] rounded-full mix-blend-multiply filter blur-[130px] opacity-50 animate-blob animation-delay-4000" style={{ backgroundColor: '#FF9AA2', animationDuration: '22s' }} />
+        <div className="absolute bottom-[-10%] right-[10%] w-[50vw] h-[50vw] rounded-full mix-blend-multiply filter blur-[100px] opacity-30 animate-blob animation-delay-6000" style={{ backgroundColor: '#A40000', animationDuration: '28s' }} />
+        
+        {/* Subtle premium grain texture overlay */}
+        <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }} />
       </div>
 
       <Navbar />
