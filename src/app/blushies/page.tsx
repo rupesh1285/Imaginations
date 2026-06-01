@@ -76,7 +76,7 @@ export default async function BlushiesPage({
         {/* Polaroid Gallery Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
           {products.map((product) => (
-            <Link key={product.id} href={`/blushies/${product.id}`}>
+            <Link key={product.id} href={`/blushies/${product.id}`} prefetch={false}>
               <PolaroidCard 
                 title={product.name}
                 imageSrc={product.imageUrls && product.imageUrls.length > 0 ? product.imageUrls[0] : "/images/placeholder.jpg"}

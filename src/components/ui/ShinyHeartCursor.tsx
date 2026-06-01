@@ -52,24 +52,23 @@ export default function ShinyHeartCursor() {
       heart.style.height = `${size}px`;
       heart.style.color = color;
       
-      // Luxurious soft glow
-      heart.style.filter = `drop-shadow(0 0 5px ${color}) drop-shadow(0 0 10px rgba(212,175,55,0.4))`;
+      // Optimized shadow (less intense for GPU)
+      heart.style.filter = `drop-shadow(0 0 3px ${color})`;
       
       document.body.appendChild(heart);
 
-      // Slow, elegant drift upwards and slightly sideways
-      const driftX = (Math.random() - 0.5) * 40; 
-      const driftY = -(Math.random() * 40 + 40); 
-      const rotation = (Math.random() - 0.5) * 60; // Subtle rotation
+      // Faster, cleaner animation
+      const driftX = (Math.random() - 0.5) * 30; 
+      const driftY = -(Math.random() * 30 + 30); 
+      const rotation = (Math.random() - 0.5) * 45;
 
       const animation = heart.animate([
         { transform: 'translate(-50%, -50%) scale(0.5) rotate(0deg)', opacity: 0 },
-        { transform: 'translate(-50%, -50%) scale(1) rotate(10deg)', opacity: 0.8, offset: 0.2 },
+        { transform: 'translate(-50%, -50%) scale(1) rotate(10deg)', opacity: 0.7, offset: 0.2 },
         { transform: `translate(calc(-50% + ${driftX}px), calc(-50% + ${driftY}px)) scale(0.4) rotate(${rotation}deg)`, opacity: 0 }
       ], {
-        // Slow duration for a long, lingering trail
-        duration: 2000 + Math.random() * 1500,
-        easing: 'cubic-bezier(0.33, 1, 0.68, 1)',
+        duration: 1200 + Math.random() * 800, // Faster fade
+        easing: 'ease-out',
       });
 
       animation.onfinish = () => {
@@ -80,27 +79,20 @@ export default function ShinyHeartCursor() {
     const handleMouseMove = (e: MouseEvent) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
       const now = Date.now();
-      // Slightly longer spawn rate for an elegant trail rather than a chaotic explosion
-      if (now - lastSpawnTime < 80) return; 
+      // Increase throttle to 150ms to prevent massive DOM element accumulation
+      if (now - lastSpawnTime < 150) return; 
       lastSpawnTime = now;
-      spawnHeart(e.clientX, e.clientY);
+      
+      // Use requestAnimationFrame for smoother DOM writes
+      requestAnimationFrame(() => {
+        spawnHeart(e.clientX, e.clientY);
+      });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-
-    // Eject hearts even when idle
-    const idleInterval = setInterval(() => {
-      const now = Date.now();
-      // If the mouse hasn't moved in the last 150ms, spawn a heart at the last known position
-      if (now - lastSpawnTime > 150 && mousePos.current) {
-        spawnHeart(mousePos.current.x, mousePos.current.y);
-        lastSpawnTime = now;
-      }
-    }, 250);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      clearInterval(idleInterval);
     };
   }, []);
 
