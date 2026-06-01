@@ -30,11 +30,11 @@ export default function PolaroidCard({ imageSrc, title, price, note, sticker }: 
       )}
 
       {/* Photo Area */}
-      <div className="w-full aspect-square bg-[#Fdf1f4] overflow-hidden rounded-sm relative border border-[#E0E0E0]/50 shrink-0">
+      <div className="relative aspect-square w-full bg-gray-50 overflow-hidden">
         <img 
           src={imageSrc} 
           alt={title} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 shadow-[inset_0_0_15px_rgba(0,0,0,0.05)] pointer-events-none" />
       </div>

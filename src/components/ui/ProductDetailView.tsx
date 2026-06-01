@@ -50,7 +50,9 @@ export default function ProductDetailView({ product }: { product: Product }) {
               >
                 {images.map((img, idx) => (
                   <SwiperSlide key={idx}>
-                    <img src={img} alt={`${product.name} - image ${idx + 1}`} className="w-full h-full object-cover" />
+                    <div className="relative aspect-square w-full bg-[#f8f9fa] rounded-2xl overflow-hidden shrink-0 snap-center">
+                      <img src={img} alt={`${product.name} - image ${idx + 1}`} className="w-full h-full object-contain p-4" />
+                    </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -58,7 +60,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
               <img 
                 src={images[0]} 
                 alt={product.name} 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                className="w-full h-full object-contain p-4 transition-transform duration-700 hover:scale-110"
               />
             )}
             
