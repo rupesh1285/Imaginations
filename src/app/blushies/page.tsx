@@ -35,7 +35,7 @@ export default async function BlushiesPage({
     ];
   }
 
-  const products = await prisma.product.findMany({
+  let products = await prisma.product.findMany({
     where: whereClause,
     include: {
       category: true,
@@ -43,6 +43,9 @@ export default async function BlushiesPage({
     },
     orderBy: { createdAt: 'desc' }
   });
+
+  // Shuffle products randomly
+  products = products.sort(() => Math.random() - 0.5);
 
   return (
     <main className="min-h-screen flex flex-col font-nunito relative overflow-hidden text-black">
