@@ -22,7 +22,7 @@ export default function HowItWorks() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-4xl md:text-5xl font-bold text-[#4A232E] font-great-vibes"
           >
             How The Magic Happens
@@ -36,7 +36,7 @@ export default function HowItWorks() {
               key={i}
               initial={{ opacity: 0, y: 30, rotate: i % 2 === 0 ? -3 : 4 }}
               whileInView={{ opacity: 1, y: 0, rotate: i % 2 === 0 ? -3 : 4 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.2, type: "spring" }}
               className="bg-[#FDFAFA] p-8 border border-[#E3D1D1] shadow-xl relative flex flex-col items-center text-center group"
             >

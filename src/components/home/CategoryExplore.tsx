@@ -45,7 +45,7 @@ export default function CategoryExplore() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-4xl md:text-5xl font-bold text-[var(--color-plum)] font-great-vibes"
           >
             The Inspiration Board
@@ -53,7 +53,7 @@ export default function CategoryExplore() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
             className="font-miniver text-2xl text-[var(--color-plum)]/80 mt-4"
           >
@@ -70,7 +70,7 @@ export default function CategoryExplore() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, rotate: randomRotation }}
                 whileInView={{ opacity: 1, scale: 1, rotate: category.rotation }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.15, type: "spring", stiffness: 200 }}
                 whileHover={{ scale: 1.05, rotate: 0 }}
                 className="group relative cursor-pointer flex flex-col items-center"

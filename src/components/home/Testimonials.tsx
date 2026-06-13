@@ -57,7 +57,7 @@ export default function Testimonials() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-4xl md:text-5xl font-bold text-[var(--color-plum)]"
           >
             Happy Tears
@@ -65,7 +65,7 @@ export default function Testimonials() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
             className="font-miniver text-2xl text-[var(--color-plum)]/80 mt-4"
           >
@@ -80,7 +80,7 @@ export default function Testimonials() {
               key={review.id}
               initial={{ opacity: 0, scale: 0.8, rotate: review.rotation * 3 }}
               whileInView={{ opacity: 1, scale: 1, rotate: review.rotation }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.2, type: "spring" }}
               whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
               className={`relative w-72 md:w-80 ${review.color} p-6 pb-10 rounded-sm shadow-[0_10px_20px_rgba(0,0,0,0.05)] border border-[#E0E0E0] cursor-pointer`}

@@ -21,7 +21,7 @@ export default function CustomGifting() {
           <motion.div 
             initial={{ opacity: 0, rotate: -5, x: -50 }}
             whileInView={{ opacity: 1, rotate: -2, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, type: "spring" }}
             className="absolute left-0 md:left-10 w-64 md:w-80 h-80 md:h-[400px] bg-[#FAF3E0] p-3 pb-12 rounded-sm shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-20 border border-white/10"
           >
@@ -35,7 +35,7 @@ export default function CustomGifting() {
           <motion.div 
             initial={{ opacity: 0, rotate: 5, x: 50 }}
             whileInView={{ opacity: 1, rotate: 4, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
             className="absolute right-0 md:right-10 top-20 w-56 md:w-72 h-72 md:h-80 bg-[#FDFAFA] p-3 pb-10 rounded-sm shadow-[0_15px_40px_rgba(0,0,0,0.2)] z-10 border border-white/10"
           >
@@ -49,7 +49,7 @@ export default function CustomGifting() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6"
         >

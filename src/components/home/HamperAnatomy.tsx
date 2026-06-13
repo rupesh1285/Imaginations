@@ -24,7 +24,7 @@ export default function HamperAnatomy() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-4xl md:text-5xl font-bold text-[#4A232E] font-great-vibes"
           >
             Anatomy of a Hamper
@@ -37,7 +37,7 @@ export default function HamperAnatomy() {
            <motion.div 
              initial={{ scale: 0.8, opacity: 0, rotate: -2 }}
              whileInView={{ scale: 1, opacity: 1, rotate: -2 }}
-             viewport={{ once: true }}
+             viewport={{ once: true, margin: "-100px" }}
              className="w-3/4 md:w-1/2 rounded-md overflow-hidden shadow-[0_0_50px_rgba(232,165,176,0.4)] border-[12px] border-white z-10 bg-white"
            >
               <img src="/images/Hampers.png" alt="Hamper Box" className="w-full h-full object-cover" />
@@ -47,7 +47,7 @@ export default function HamperAnatomy() {
            <motion.div 
              initial={{ opacity: 0, x: -50 }}
              whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
+             viewport={{ once: true, margin: "-100px" }}
              transition={{ delay: 0.3 }}
              className="absolute top-[15%] left-[5%] md:left-[10%] bg-white p-4 shadow-[5px_5px_15px_rgba(0,0,0,0.1)] rotate-[-6deg] border border-[#E8A5B0] z-20"
            >
@@ -58,7 +58,7 @@ export default function HamperAnatomy() {
            <motion.div 
              initial={{ opacity: 0, x: 50 }}
              whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
+             viewport={{ once: true, margin: "-100px" }}
              transition={{ delay: 0.5 }}
              className="absolute top-1/3 right-[5%] md:right-[5%] bg-[#FDFAFA] p-4 shadow-[5px_5px_15px_rgba(0,0,0,0.1)] rotate-[8deg] border border-[#D4AF37] z-20"
            >
@@ -69,7 +69,7 @@ export default function HamperAnatomy() {
            <motion.div 
              initial={{ opacity: 0, y: 50 }}
              whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
+             viewport={{ once: true, margin: "-100px" }}
              transition={{ delay: 0.7 }}
              className="absolute bottom-[20%] right-[20%] md:right-[25%] bg-[#4A232E] text-[#Fdf1f4] p-4 shadow-2xl rotate-[-4deg] z-30"
            >

@@ -108,7 +108,7 @@ export default function TopPicks() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="relative bg-[#FDFAFA]/90 backdrop-blur-md px-12 py-8 rounded-lg shadow-xl border-2 border-[#D4AF37]/40"
           >
             {/* Gold corner ornaments */}

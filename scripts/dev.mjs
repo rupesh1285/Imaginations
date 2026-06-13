@@ -93,7 +93,8 @@ function formatLine(line) {
 // ─── Main ─────────────────────────────────────────────────────────────────
 const [supabase, clerk] = await Promise.all([checkSupabase(), checkClerk()])
 
-const next = spawn('next', ['dev', '--turbopack'], {
+const args = process.argv.slice(2)
+const next = spawn('next', ['dev', '--turbopack', ...args], {
   stdio: ['inherit', 'pipe', 'pipe'],
   shell: true,
   env: {

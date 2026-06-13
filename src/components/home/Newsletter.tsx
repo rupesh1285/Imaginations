@@ -148,7 +148,7 @@ export default function Newsletter() {
            <motion.div
              initial={{ opacity: 0, y: 10 }}
              whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
+             viewport={{ once: true, margin: "-100px" }}
              transition={{ duration: 0.5, delay: 0 }}
              className="mb-8"
            >
@@ -161,7 +161,7 @@ export default function Newsletter() {
            <motion.span 
              initial={{ opacity: 0, x: -20 }}
              whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
+             viewport={{ once: true, margin: "-100px" }}
              transition={{ duration: 0.6, delay: 0.15 }}
              className="font-great-vibes text-2xl md:text-3xl text-[#B76E79] ml-6 drop-shadow-sm block overflow-visible leading-[1]"
            >
@@ -172,7 +172,7 @@ export default function Newsletter() {
            <motion.h2 
              initial={{ opacity: 0, x: -20 }}
              whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
+             viewport={{ once: true, margin: "-100px" }}
              transition={{ duration: 0.6, delay: 0.35 }}
              className="text-5xl md:text-7xl leading-[1] mt-1 mb-3 font-great-vibes drop-shadow-sm overflow-visible ml-6"
              style={{
@@ -189,7 +189,7 @@ export default function Newsletter() {
            <motion.div 
              initial={{ scaleX: 0 }}
              whileInView={{ scaleX: 1 }}
-             viewport={{ once: true }}
+             viewport={{ once: true, margin: "-100px" }}
              transition={{ duration: 0.8, delay: 0.5 }}
              className="h-[1.5px] w-24 mt-2 mb-8 origin-left ml-6"
              style={{ background: 'linear-gradient(90deg, #D4AF37, #B76E79, transparent)' }}
@@ -199,7 +199,7 @@ export default function Newsletter() {
            <motion.p 
              initial={{ opacity: 0, y: 15 }}
              whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
+             viewport={{ once: true, margin: "-100px" }}
              transition={{ duration: 0.6, delay: 0.55 }}
              className="text-[#5C3A46]/80 text-base md:text-lg mb-10 font-nunito italic max-w-md leading-relaxed tracking-wide ml-6"
            >
@@ -210,7 +210,7 @@ export default function Newsletter() {
            <motion.form 
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
+             viewport={{ once: true, margin: "-100px" }}
              transition={{ duration: 0.6, delay: 0.7 }}
              className="w-full max-w-md relative mt-6 ml-6"
              onSubmit={handleSubmit}

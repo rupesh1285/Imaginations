@@ -63,7 +63,7 @@ export default async function BlushiesPage({
 
       <Navbar />
       
-      <div className="max-w-7xl mx-auto px-6 py-12 relative z-10 flex-grow w-full">
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-12 relative z-10 flex-grow w-full">
         <div className="text-center mb-10">
           <h1 className="text-5xl md:text-6xl font-bold text-[#4A232E] mb-4 font-great-vibes">
             All Blushies
