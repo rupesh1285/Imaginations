@@ -4,6 +4,8 @@ import ProductForm from "./ProductForm";
 import { Trash2 } from "lucide-react";
 import { deleteProduct } from "@/app/actions/product";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminProductsPage() {
   const products = await prisma.product.findMany({
     include: {

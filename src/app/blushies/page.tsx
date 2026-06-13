@@ -7,6 +7,8 @@ import PolaroidCard from "@/components/ui/PolaroidCard";
 import SearchBar from "@/components/ui/SearchBar";
 import CategoryTabs from "@/components/ui/CategoryTabs";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlushiesPage({
   searchParams,
 }: {
