@@ -20,9 +20,10 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.35 }}
             className="text-4xl md:text-5xl font-bold text-[#4A232E] font-great-vibes"
           >
             How The Magic Happens
@@ -34,11 +35,12 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 30, rotate: i % 2 === 0 ? -3 : 4 }}
+              initial={{ opacity: 0, y: 20, rotate: i % 2 === 0 ? -3 : 4 }}
               whileInView={{ opacity: 1, y: 0, rotate: i % 2 === 0 ? -3 : 4 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: i * 0.2, type: "spring" }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ delay: i * 0.08, duration: 0.35, type: "spring", stiffness: 300 }}
               className="bg-[#FDFAFA] p-8 border border-[#E3D1D1] shadow-xl relative flex flex-col items-center text-center group"
+              style={{ willChange: "transform" }}
             >
               {/* Tape */}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-[#F9C5D1]/60 backdrop-blur-md -rotate-3 z-10 shadow-sm border border-white/50" style={{ clipPath: 'polygon(0% 10%, 100% 0%, 95% 100%, 5% 90%)' }} />

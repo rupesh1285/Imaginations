@@ -3,24 +3,19 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-}
-
-enum Role {
-  CUSTOMER
-  ADMIN
+  provider = "postgresql"
 }
 
 model User {
   id        String   @id @default(uuid())
-  clerkId   String   @unique 
+  clerkId   String   @unique
   email     String   @unique
   name      String?
   imageUrl  String?
-  role      Role     @default(CUSTOMER)
-  orders    Order[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  role      Role     @default(CUSTOMER)
+  orders    Order[]
 }
 
 model Product {
@@ -29,17 +24,17 @@ model Product {
   tagline     String?
   description String?
   price       Decimal   @db.Decimal(10, 2)
+  categoryId  String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
   imageUrls   String[]  @default([])
   rating      Float     @default(0)
   reviews     Int       @default(0)
   features    String[]  @default([])
   inStock     Boolean   @default(true)
-  categoryId  String?
+  orders      Order[]
   category    Category? @relation(fields: [categoryId], references: [id])
   tags        Tag[]     @relation("ProductTags")
-  orders      Order[]
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
 }
 
 model Category {
@@ -57,11 +52,16 @@ model Tag {
 model Order {
   id        String   @id @default(uuid())
   userId    String
-  user      User     @relation(fields: [userId], references: [id])
   productId String
-  product   Product  @relation(fields: [productId], references: [id])
   quantity  Int      @default(1)
   status    String   @default("PENDING")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  product   Product  @relation(fields: [productId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
 }

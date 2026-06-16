@@ -43,21 +43,22 @@ export default function CategoryExplore() {
       <div className="max-w-7xl mx-auto px-6 relative z-10 mt-12">
         <div className="text-center mb-16">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.35 }}
             className="text-4xl md:text-5xl font-bold text-[var(--color-plum)] font-great-vibes"
           >
             The Inspiration Board
           </motion.h2>
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ delay: 0.08, duration: 0.3 }}
             className="font-miniver text-2xl text-[var(--color-plum)]/80 mt-4"
           >
-            Find exactly what you're looking for...
+            Find exactly what you&apos;re looking for...
           </motion.p>
         </div>
 
@@ -68,12 +69,13 @@ export default function CategoryExplore() {
             return (
             <Link href={`/blushies?category=${category.id}`} key={category.id}>
               <motion.div
-                initial={{ opacity: 0, scale: 0.8, rotate: randomRotation }}
+                initial={{ opacity: 0, scale: 0.9, rotate: randomRotation }}
                 whileInView={{ opacity: 1, scale: 1, rotate: category.rotation }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.15, type: "spring", stiffness: 200 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.35, delay: index * 0.07, type: "spring", stiffness: 300 }}
                 whileHover={{ scale: 1.05, rotate: 0 }}
                 className="group relative cursor-pointer flex flex-col items-center"
+                style={{ willChange: "transform" }}
               >
                 {/* Washi Tape */}
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-[#Fdf1f4]/60 backdrop-blur-md rotate-[-5deg] z-20 shadow-sm border border-white/40" style={{ clipPath: 'polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%)' }} />

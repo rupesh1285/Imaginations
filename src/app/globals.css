@@ -57,6 +57,7 @@ body {
   background-color: var(--color-beige);
   color: var(--color-plum);
   font-family: var(--font-nunito), sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* Force links to inherit so they don't turn default blue */
@@ -177,4 +178,87 @@ a {
 .newsletter-input:focus {
   border-color: var(--color-gold) !important;
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.15), 0 0 40px rgba(212, 175, 55, 0.05) !important;
+}
+
+/* =========================================
+   PERFORMANCE: GPU-promoted animation layers
+   ========================================= */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Hero CSS-only floating animations — zero JS overhead */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes heroFloatDelayed {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(22px) rotate(4deg); }
+}
+
+.hero-float {
+  animation: heroFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+.hero-float-delayed {
+  animation: heroFloatDelayed 8s ease-in-out infinite;
+  animation-delay: -1s;
+  will-change: transform;
+}
+
+/* Hero ambient orbs — CSS only, no JS */
+@keyframes orbDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  50% { transform: translate(30px, -40px) scale(1.1); opacity: 0.5; }
+}
+@keyframes orbDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+  50% { transform: translate(-25px, 30px) scale(0.9); opacity: 0.4; }
+}
+@keyframes orbDrift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.15; }
+  50% { transform: translate(20px, 20px) scale(1.05); opacity: 0.3; }
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+.hero-orb-1 {
+  width: 40vw;
+  height: 40vw;
+  top: -10%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(249,197,209,0.35) 0%, transparent 70%);
+  animation: orbDrift1 12s ease-in-out infinite;
+}
+.hero-orb-2 {
+  width: 30vw;
+  height: 30vw;
+  bottom: 5%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%);
+  animation: orbDrift2 15s ease-in-out infinite;
+  animation-delay: -4s;
+}
+.hero-orb-3 {
+  width: 20vw;
+  height: 20vw;
+  top: 30%;
+  right: 20%;
+  background: radial-gradient(circle, rgba(183,110,121,0.2) 0%, transparent 70%);
+  animation: orbDrift3 10s ease-in-out infinite;
+  animation-delay: -7s;
+}
+
+/* Page transition fade */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter {
+  animation: pageFadeIn 0.35s ease-out both;
 }

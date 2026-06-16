@@ -55,18 +55,19 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.35 }}
             className="text-4xl md:text-5xl font-bold text-[var(--color-plum)]"
           >
             Happy Tears
           </motion.h2>
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ delay: 0.08, duration: 0.3 }}
             className="font-miniver text-2xl text-[var(--color-plum)]/80 mt-4"
           >
             Love notes from our family to yours.
@@ -78,12 +79,13 @@ export default function Testimonials() {
           {testimonials.map((review, index) => (
             <motion.div
               key={review.id}
-              initial={{ opacity: 0, scale: 0.8, rotate: review.rotation * 3 }}
+              initial={{ opacity: 0, scale: 0.92, rotate: review.rotation * 2 }}
               whileInView={{ opacity: 1, scale: 1, rotate: review.rotation }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.2, type: "spring" }}
-              whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.35, delay: index * 0.08, type: "spring", stiffness: 300 }}
+              whileHover={{ scale: 1.04, rotate: 0, zIndex: 10 }}
               className={`relative w-72 md:w-80 ${review.color} p-6 pb-10 rounded-sm shadow-[0_10px_20px_rgba(0,0,0,0.05)] border border-[#E0E0E0] cursor-pointer`}
+              style={{ willChange: "transform" }}
             >
               {/* Paperclip SVG or Washi Tape */}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-[#D4AF37] opacity-80">

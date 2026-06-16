@@ -106,10 +106,11 @@ export default function TopPicks() {
         <div className="flex flex-col items-center mb-16 relative w-fit mx-auto">
           {/* Decorated Scrapbook Label */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.92 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="relative bg-[#FDFAFA]/90 backdrop-blur-md px-12 py-8 rounded-lg shadow-xl border-2 border-[#D4AF37]/40"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.35 }}
+            className="relative bg-[#FDFAFA]/90 px-12 py-8 rounded-lg shadow-xl border-2 border-[#D4AF37]/40"
           >
             {/* Gold corner ornaments */}
             <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-[#D4AF37] rounded-tl-sm" />
@@ -139,10 +140,11 @@ export default function TopPicks() {
           {topPicks.map((pick, index) => (
             <motion.div
               key={pick.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              style={{ willChange: "transform" }}
             >
               <ScrapbookCard 
                 title={pick.title}

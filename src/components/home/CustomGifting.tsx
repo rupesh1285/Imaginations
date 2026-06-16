@@ -19,11 +19,12 @@ export default function CustomGifting() {
         {/* Left Side: Images/Aesthetic Visuals */}
         <div className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center">
           <motion.div 
-            initial={{ opacity: 0, rotate: -5, x: -50 }}
+            initial={{ opacity: 0, rotate: -5, x: -40 }}
             whileInView={{ opacity: 1, rotate: -2, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, type: "spring" }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.4, type: "spring", stiffness: 200 }}
             className="absolute left-0 md:left-10 w-64 md:w-80 h-80 md:h-[400px] bg-[#FAF3E0] p-3 pb-12 rounded-sm shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-20 border border-white/10"
+            style={{ willChange: "transform" }}
           >
              <div className="w-full h-full bg-[#D4AF37]/20 border border-[#D4AF37]/50 overflow-hidden relative">
                 {/* Replace with an image of someone tying a ribbon or making a custom box */}
@@ -33,11 +34,12 @@ export default function CustomGifting() {
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, rotate: 5, x: 50 }}
+            initial={{ opacity: 0, rotate: 5, x: 40 }}
             whileInView={{ opacity: 1, rotate: 4, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.4, delay: 0.08, type: "spring", stiffness: 200 }}
             className="absolute right-0 md:right-10 top-20 w-56 md:w-72 h-72 md:h-80 bg-[#FDFAFA] p-3 pb-10 rounded-sm shadow-[0_15px_40px_rgba(0,0,0,0.2)] z-10 border border-white/10"
+            style={{ willChange: "transform" }}
           >
              <div className="w-full h-full bg-[#F9C5D1]/30 border border-[#F9C5D1]/50 overflow-hidden">
                 <img src="/images/hero.png" alt="Custom box" className="w-full h-full object-cover mix-blend-luminosity opacity-80" />
@@ -47,10 +49,10 @@ export default function CustomGifting() {
 
         {/* Right Side: Text & CTA */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.35 }}
           className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6"
         >
           <div className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 backdrop-blur-sm text-[#D4AF37] font-bold text-sm tracking-widest uppercase">
